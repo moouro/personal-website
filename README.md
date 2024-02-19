@@ -2,13 +2,13 @@
 
 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🧑‍🚀 **mouro.dev** Seja bem vindo!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![Imagem do site mouro.dev](src/assets/site.jpg)
 
-## 🚀 Project Structure
+## 🚀 Estrutura do projeto
 
-Inside of your Astro project, you'll see the following folders and files:
+Dentro do seu projeto, você verá as seguintes pastas e arquivos:
 
 ```text
 /
@@ -24,17 +24,26 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Breve Explicação sobre o Projeto
+
+Este projeto é desenvolvido com o framework Astro, uma plataforma moderna e flexível para construção de aplicativos web de alto desempenho e reativos. O Astro combina as melhores práticas de desenvolvimento web com ferramentas familiares como React, Vue, Angular.
+
+## Visão Geral do Projeto
+
+- **Estrutura do Projeto**: O projeto segue uma estrutura organizada, com páginas estáticas e dinâmicas no diretório `src/pages/`, onde cada arquivo `.astro` ou `.md` representa uma rota no aplicativo. Os componentes reutilizáveis são armazenados em `src/components/`.
+  
+- **Ativos Estáticos**: Imagens e arquivos CSS são gerenciados no diretório `public/`.
+
+Este projeto promete oferecer uma experiência de desenvolvimento moderna, eficiente e altamente performática para a criação de aplicativos web de alta qualidade.
+
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+Todas as instruções são executadas a partir da raiz do projeto, a partir de um terminal:
 
-| Command                   | Action                                           |
+| Comando                  | Ação                                           |
 | :------------------------ | :----------------------------------------------- |
 | `pnpm install`             | Installs dependencies                            |
 | `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
