@@ -1,0 +1,91 @@
+---
+import Hero from '@/components/Hero.astro'
+import Projects from '@/components/Projects.astro'
+import Stack from '@/components/Stack.astro'
+import Layout from '@/layouts/Layout.astro'
+import projectData from '@/data/projects.json'
+import stackData from '@/data/stack.json'
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout title='mouro.dev'>
+  <div class='grid grid-rows-newRow gap-4 h-svh'>
+    <header>
+      <Hero />
+    </header>
+
+    <main class='space-y-12'>
+      <section>
+        <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
+          <div class='flex items-baseline justify-between'>
+            <h2 class='md:text-3xl font-bold'>Projetos Recentes</h2>
+            <a
+              class='hover:text-dark-primary transition-colors flex items-center gap-2'
+              href='/projects'
+              >Ver todos <Icon name='ri:external-link-fill' />
+            </a>
+          </div>
+          <div class='grid gap-4'>
+            {
+              projectData.map((projectData) => {
+                return (
+                  <Projects
+                    name={projectData.name}
+                    description={projectData.description}
+                    url={projectData.url}
+                  />
+                )
+              })
+            }
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
+          <h2 class='md:text-3xl font-bold'>Minha stack</h2>
+          <p class='font-medium text-sm md:text-lg text-zinc-300'>
+            No meu fluxo de trabalho diário, confio em uma série de ferramentas
+            que me ajudam a manter a eficiência e a qualidade em meus projetos.
+          </p>
+
+          <div class='space-y-6'>
+            {
+              stackData.map((stackData) => {
+                return (
+                  <Stack
+                    image={stackData.image}
+                    title={stackData.title}
+                    body={stackData.body}
+                    href={stackData.href}
+                  />
+                )
+              })
+            }
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h3>Footer</h3>
+    </footer>
+  </div>
+
+  <style>
+    header {
+      background: url(../assets/bg-7.jpg);
+      position: relative;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    }
+  </style>
+</Layout>

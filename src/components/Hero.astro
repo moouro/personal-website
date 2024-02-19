@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets'
+import Profile from '../assets/profile.jpeg'
+import { Icon } from 'astro-icon/components'
+---
+
+<nav class='container max-w-2xl mx-auto px-4 mt-10 relative z-10'>
+  <div class='space-y-8'>
+    <figure>
+      <Image
+        src={Profile}
+        width='150 '
+        alt='foto de perfil do rodrigo mouro'
+        format='avif'
+        class='rounded-full'
+      />
+    </figure>
+    <h1 class='font-bold text-sm md:text-3xl'>
+      Olá, sou o Mouro <span class='js-name text-dark-primary'></span>
+    </h1>
+
+    <p class='font-medium text-sm md:text-lg text-zinc-300'>
+      Bem-vindo ao <span class='text-dark-primary text-'>mouro.dev</span> , o lugar
+      onde transformo conceitos em experiências digitais notáveis. Com uma abordagem
+      profissional, meu compromisso é criar soluções web de alta qualidade para impulsionar
+      a presença online do seu projeto.
+    </p>
+
+    <div class='grid gap-3 items-center grid-cols-2 justify-center w-fit'>
+      <a
+        href='/about'
+        class='rounded-md bg-dark-primary px-3.5 py-2.5 text-sm font-semibold text-violet-100 text-center shadow-sm hover:bg-dark-primary/90'
+        >Sobre mim</a
+      >
+      <a
+        href='https://wa.me/5521992802319'
+        target='_blank'
+        class='text-sm font-semibold leading-6 text-zinc-100hover:text-violet-500 transition-colors duration-200'
+        >Entre em contato <span aria-hidden='true'>
+          <Icon name='ri:whatsapp-line' class='inline-block w-4 h-4' />
+        </span></a
+      >
+    </div>
+  </div>
+</nav>
+
+<script>
+  import Typed from 'typed.js'
+
+  const typed = new Typed('.js-name', {
+    strings: ['Desenvolvedor Web', 'Designer', 'Freelancer'],
+    typeSpeed: 100,
+    backSpeed: 120,
+    loop: true
+  })
+</script>

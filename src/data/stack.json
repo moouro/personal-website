@@ -1,0 +1,26 @@
+[
+  {
+    "image": "/vscode.svg",
+    "title": "Visual Studio Code",
+    "body": "(VSCode) é minha escolha principal para desenvolvimento",
+    "href": "https://code.visualstudio.com/"
+  },
+  {
+    "image": "/hyper.svg",
+    "title": "Hyper",
+    "body": "Terminal moderno construído com HTML/CSS/JS",
+    "href": "https://hyper.is/"
+  },
+  {
+    "image": "/figma.svg",
+    "title": "Figma",
+    "body": "Ferramenta de design de interface do usuário",
+    "href": "https://www.figma.com/"
+  },
+  {
+    "image": "/chrome.svg",
+    "title": "Google Chrome",
+    "body": "Navegador da web",
+    "href": "https://www.google.com/chrome/"
+  }
+]
