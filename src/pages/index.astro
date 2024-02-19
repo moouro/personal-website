@@ -1,8 +1,9 @@
 ---
+import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
 import Projects from '@/components/Projects.astro'
 import Stack from '@/components/Stack.astro'
-import Layout from '@/layouts/Layout.astro'
+import Footer from '@/components/Footer.astro'
 import projectData from '@/data/projects.json'
 import stackData from '@/data/stack.json'
 import { Icon } from 'astro-icon/components'
@@ -74,7 +75,7 @@ import { Icon } from 'astro-icon/components'
 
     <footer>
       <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
-        <h3>Footer</h3>
+        <Footer />
       </div>
     </footer>
   </div>

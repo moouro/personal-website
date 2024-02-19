@@ -1,17 +1,7 @@
 [
   {
-    "name": "Web Site",
+    "name": "Meu site pessoal",
     "description": "Minha página pessoal com informações sobre mim.",
-    "url": "https://www.google.com"
-  },
-  {
-    "name": "Calculadora",
-    "description": "Minha página pessoal com informações sobre mim Minha página pessoal com informações sobre mim Minha página pessoal com informações sobre mim Minha página pessoal com informações sobre mim",
-    "url": "https://www.google.com"
-  },
-  {
-    "name": "Pokedex",
-    "description": "Minha página pessoal com informações sobre mim Minha página pessoal com informações sobre mim Minha página pessoal com informações sobre mim",
-    "url": "https://www.google.com"
+    "url": "https://github.com/moouro/personal-website"
   }
 ]
