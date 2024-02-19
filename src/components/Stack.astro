@@ -9,10 +9,14 @@ interface Props {
 const { image, href, title, body } = Astro.props
 ---
 
-<a href={href} target='_blank' class='flex gap-3'>
+<a
+  href={href}
+  target='_blank'
+  class='flex gap-3 flex-col border-dark-primary/50 border p-3 rounded-md hover:bg-dark-destructive hover:bg-opacity-10 transition-colors duration-300 ease-in-out'
+>
   <img src={image} alt='Descrição da imagem' class='w-10' />
-  <div>
-    <h2>{title}</h2>
-    <p>{body}</p>
+  <div class='space-y-2'>
+    <h2 class='text-sm'>{title}</h2>
+    <p class='text-xs'>{body}</p>
   </div>
 </a>
