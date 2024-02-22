@@ -7,9 +7,11 @@ import Footer from '@/components/Footer.astro'
 import projectData from '@/data/projects.json'
 import stackData from '@/data/stack.json'
 import { Icon } from 'astro-icon/components'
+import { ViewTransitions } from 'astro:transitions'
 ---
 
 <Layout title='mouro.dev'>
+  <ViewTransitions />
   <div class='grid grid-rows-newRow gap-4 h-svh'>
     <header>
       <Hero />
@@ -17,9 +19,9 @@ import { Icon } from 'astro-icon/components'
 
     <main class='space-y-12'>
       <section>
-        <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
+        <div class='container max-w-2xl mx-auto px-4 space-y-4'>
           <div class='flex items-baseline justify-between'>
-            <h2 class='md:text-3xl font-bold'>Projetos Recentes</h2>
+            <h2 class='md:text-2xl font-bold'>Projetos Recentes</h2>
             <a
               class='hover:text-dark-primary transition-colors flex items-center gap-2'
               href='/projects'
@@ -43,8 +45,8 @@ import { Icon } from 'astro-icon/components'
       </section>
 
       <section>
-        <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
-          <h2 class='md:text-3xl font-bold'>Minha stack</h2>
+        <div class='container max-w-2xl mx-auto px-4 space-y-4'>
+          <h2 class='md:text-2xl font-bold'>Minha stack</h2>
           <p class='font-medium text-sm md:text-lg text-zinc-300'>
             No meu fluxo de trabalho diário, confio em uma série de ferramentas
             que me ajudam a manter a eficiência e a qualidade em meus projetos.
@@ -74,7 +76,7 @@ import { Icon } from 'astro-icon/components'
     </main>
 
     <footer>
-      <div class='container max-w-2xl mx-auto px-4 mt-10 space-y-4'>
+      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
         <Footer />
       </div>
     </footer>

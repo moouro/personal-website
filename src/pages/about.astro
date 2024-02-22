@@ -1,0 +1,58 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import AboutImage from '@/assets/about.jpg'
+---
+
+<Layout title='Sobre mim '>
+  <ViewTransitions />
+  <header>
+    <div class='container max-w-2xl mx-auto px-4 mt-10'>
+      <div class='space-y-4'>
+        <h1 class='font-bold text-lg md:text-2xl'>Sobre mim</h1>
+
+        <div>
+          <p class='font-medium font-mono text-sm md:text-base text-zinc-300'>
+            Seja bem-vindo ao meu mundo digital! Meu nome é <span
+              class='text-dark-primary font-bold'>Rodrigo Luiz</span
+            >, mas você pode me chamar de <span
+              class='text-dark-primary font-bold'>Mouro</span
+            >. Sou um desenvolvedor <span class='text-dark-primary font-bold'
+              >Frontend</span
+            > apaixonado e estou em uma jornada excitante de mais de dois anos nesse
+            universo fascinante da tecnologia.
+          </p>
+        </div>
+
+        <div class='grid md:grid-cols-3 gap-3 items-center'>
+          <p
+            class='font-medium font-mono text-sm md:text-base text-zinc-300 col-span-2 mt-5 md:mt-15'
+          >
+            Minha jornada começou com um grande desejo de explorar o mundo da
+            programação e da criação web. Nos últimos anos, mergulhei de cabeça
+            nesse campo dinâmico e desafiador, dedicando-me incansavelmente a
+            aprimorar minhas habilidades e aprofundar meu conhecimento.
+          </p>
+
+          <Image
+            class='rounded-md shadow-lg'
+            src={AboutImage}
+            alt='Foto de perfil'
+            width='200'
+            format='avif'
+          />
+        </div>
+
+        <p class='font-medium font-mono text-sm md:text-base text-zinc-300'>
+          <span class='text-dark-primary font-extrabold'
+            >Minha missão é simples:</span
+          > criar soluções digitais que não apenas impressionem visualmente, mas
+          também ofereçam resultados tangíveis para meus clientes. Acredito firmemente
+          que a chave para o sucesso está na combinação de criatividade, habilidade
+          técnica e um profundo entendimento das necessidades do cliente.
+        </p>
+      </div>
+    </div>
+  </header>
+</Layout>
