@@ -3,56 +3,113 @@ import { ViewTransitions } from 'astro:transitions'
 import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import AboutImage from '@/assets/about.jpg'
+import Footer from '@/components/Footer.astro'
+import Skill from '@/components/Skill.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Layout title='Sobre mim '>
   <ViewTransitions />
-  <header>
-    <div class='container max-w-2xl mx-auto px-4 mt-10'>
-      <div class='space-y-4'>
-        <h1 class='font-bold text-lg md:text-2xl'>Sobre mim</h1>
 
-        <div>
+  <div class='grid grid-rows-newRow gap-4 h-svh mt-10'>
+    <header>
+      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
+        <div class='space-y-4'>
+          <div class='flex justify-between items-center'>
+            <h1 class='font-bold text-lg md:text-3xl'>Sobre mim</h1>
+
+            <a href='/' class='flex items-center gap-1'>
+              <Icon name='ri:arrow-left-s-line' />
+              <span>Voltar</span>
+            </a>
+          </div>
+
+          <div class='space-y-2'>
+            <p class='font-medium font-mono text-sm md:text-base text-zinc-300'>
+              Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me
+              chamar de Mouro. Como desenvolvedor Frontend, estou imerso nesse
+              fascinante universo tecnológico há mais de dois anos
+            </p>
+          </div>
+
+          <div class='grid md:grid-cols-3 gap-3 items-center'>
+            <p
+              class='font-medium font-mono text-sm md:text-base text-zinc-300 col-span-2 mt-5 md:mt-15'
+            >
+              Minha jornada começou com um grande desejo de explorar a
+              programação e a criação web. Ao longo dos últimos anos, mergulhei
+              de cabeça nesse campo dinâmico e desafiador, dedicando-me
+              incansavelmente a aprimorar minhas habilidades e conhecimentos.
+            </p>
+
+            <Image
+              class='rounded-md shadow-lg'
+              src={AboutImage}
+              alt='Foto de perfil'
+              width='200'
+              format='avif'
+            />
+          </div>
+          <h2 class='text-base md:text-2xl font-bold'>Minha missão</h2>
           <p class='font-medium font-mono text-sm md:text-base text-zinc-300'>
-            Seja bem-vindo ao meu mundo digital! Meu nome é <span
-              class='text-dark-primary font-bold'>Rodrigo Luiz</span
-            >, mas você pode me chamar de <span
-              class='text-dark-primary font-bold'>Mouro</span
-            >. Sou um desenvolvedor <span class='text-dark-primary font-bold'
-              >Frontend</span
-            > apaixonado e estou em uma jornada excitante de mais de dois anos nesse
-            universo fascinante da tecnologia.
+            Minha missão é clara: criar soluções digitais que não só
+            impressionem visualmente, mas também ofereçam resultados tangíveis
+            para meus clientes. Acredito firmemente que o segredo do sucesso
+            reside na combinação de criatividade, habilidade técnica e um
+            profundo entendimento das necessidades do cliente..
           </p>
         </div>
-
-        <div class='grid md:grid-cols-3 gap-3 items-center'>
-          <p
-            class='font-medium font-mono text-sm md:text-base text-zinc-300 col-span-2 mt-5 md:mt-15'
-          >
-            Minha jornada começou com um grande desejo de explorar o mundo da
-            programação e da criação web. Nos últimos anos, mergulhei de cabeça
-            nesse campo dinâmico e desafiador, dedicando-me incansavelmente a
-            aprimorar minhas habilidades e aprofundar meu conhecimento.
-          </p>
-
-          <Image
-            class='rounded-md shadow-lg'
-            src={AboutImage}
-            alt='Foto de perfil'
-            width='200'
-            format='avif'
-          />
-        </div>
-
-        <p class='font-medium font-mono text-sm md:text-base text-zinc-300'>
-          <span class='text-dark-primary font-extrabold'
-            >Minha missão é simples:</span
-          > criar soluções digitais que não apenas impressionem visualmente, mas
-          também ofereçam resultados tangíveis para meus clientes. Acredito firmemente
-          que a chave para o sucesso está na combinação de criatividade, habilidade
-          técnica e um profundo entendimento das necessidades do cliente.
-        </p>
       </div>
-    </div>
-  </header>
+    </header>
+
+    <main class='mt-20'>
+      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
+        <div class='space-y-5'>
+          <h2 class='text-base md:text-xl font-semibold'>
+            Tecnologias que trabalho:
+          </h2>
+          <div class='grid md:grid-cols-3 gap-3'>
+            <Skill
+              href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
+              name='html'
+              title='HTML'
+            />
+            <Skill
+              href='https://developer.mozilla.org/pt-BR/docs/Web/CSS'
+              name='css'
+              title='CSS'
+            />
+            <Skill
+              href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'
+              name='js'
+              title='Javascript'
+            />
+          </div>
+          <h2 class='text-base md:text-xl font-semibold'>
+            Atualmente estou estudando constantemente:
+          </h2>
+
+          <div class='grid md:grid-cols-3 gap-3'>
+            <Skill href='https://react.dev/' name='react' title='React' />
+            <Skill href='https://nextjs.org/' name='next' title='Next JS' />
+            <Skill href='https://astro.build/' name='astro' title='Astro Js' />
+          </div>
+        </div>
+
+        <a
+          href='/'
+          class='rounded-md bg-transparent px-3.5 py-2.5 text-sm font-semibold text-violet-100 shadow-sm border border-dark-card flex items-center gap-2 hover:bg-dark-primary hover:text-violet-100 transition-all duration-300 ease-in-out w-fit'
+        >
+          <Icon name='ri:home-2-line' width={20} height={20} />
+          <span>Página inicial</span>
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
+        <Footer />
+      </div>
+    </footer>
+  </div>
 </Layout>

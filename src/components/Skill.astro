@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string
+  href: string
+  name: string
+}
+
+const { title, name, href } = Astro.props
+
+import { Icon } from 'astro-icon/components'
+---
+
+<a
+  href={href}
+  class='flex flex-col items-center gap-4 border border-dark-card rounded-lg transition-all duration-300 ease-in-out hover:bg-dark-card hover:border-dark-card-hover hover:text-dark-card-hover py-4 px-6 text-center'
+  target='_blank'
+>
+  <span class='text-xs font-bold text-zinc-300'>{title}</span>
+  <Icon name={name} width={40} height={40} />
+</a>
