@@ -11,16 +11,18 @@ const { name, description, url } = Astro.props
 ---
 
 <d4iv
-  class='p-4 border rounded-lg shadow bg-dark-card border-zinc-700 flex flex-col justify-between hover:scale-105 transition-transform duration-300 ease-in-out'
+  class='p-4 border rounded-lg shadow bg-dark-card border-zinc-700 flex flex-col gap-2 justify-between hover:scale-105 transition-transform duration-300 ease-in-out'
 >
-  <h5 class='mb-2 text-2xl font-bold tracking-tight text-zinc-100'>{name}</h5>
+  <h5 class='mb-2 text-xl font-bold tracking-tight text-zinc-100'>{name}</h5>
 
-  <p class='mb-3 font-normal text-zinc-400'>{description}</p>
+  <div class='space-y-3'>
+    <p class='font-normal text-zinc-400'>{description}</p>
 
-  <a
-    target='_blank'
-    class='flex items-center gap-2 px-3 py-2 text-sm bg-dark-primary/40 rounded-md w-fit hover:bg-dark-primary/50
+    <a
+      target='_blank'
+      class='flex items-center gap-2 px-3 py-2 text-sm bg-dark-primary/40 rounded-md w-fit hover:bg-dark-primary/50
    transition-colors duration-300 ease-in-out text-zinc-100 hover:text-zinc-50'
-    href={url}>Ver online <Icon name='ri:arrow-right-up-line' /></a
-  >
+      href={url}>Ver online <Icon name='ri:arrow-right-up-line' /></a
+    >
+  </div>
 </d4iv>
