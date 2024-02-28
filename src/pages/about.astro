@@ -11,12 +11,12 @@ import { Icon } from 'astro-icon/components'
 <Layout title='Sobre mim '>
   <ViewTransitions />
 
-  <div class='grid grid-rows-newRow gap-4 h-svh mt-10'>
+  <div class='mt-10 grid h-svh grid-rows-newRow gap-4'>
     <header>
-      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
-        <div class='space-y-4'>
-          <div class='flex justify-between items-center'>
-            <h1 class='font-bold text-lg md:text-3xl'>Sobre mim</h1>
+      <div class='container mx-auto max-w-2xl space-y-4 px-4'>
+        <div class='space-y-3'>
+          <div class='flex items-center justify-between'>
+            <h1 class='text-lg font-bold md:text-3xl'>Sobre mim</h1>
 
             <a href='/' class='flex items-center gap-1'>
               <Icon name='ri:arrow-left-s-line' />
@@ -24,17 +24,17 @@ import { Icon } from 'astro-icon/components'
             </a>
           </div>
 
-          <div class='space-y-2'>
-            <p class='font-medium font-mono text-sm md:text-xl text-zinc-500'>
+          <div class=''>
+            <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
               Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me
               chamar de Mouro. Como desenvolvedor Frontend, estou imerso nesse
               fascinante universo tecnológico há mais de dois anos
             </p>
           </div>
 
-          <div class='grid md:grid-cols-3 gap-3 items-center'>
+          <div class='grid items-end gap-3 md:grid-cols-3'>
             <p
-              class='font-medium font-mono text-sm md:text-xl text-zinc-500 col-span-2 mt-5 md:mt-15'
+              class='md:mt-15 col-span-2 mt-5 font-mono text-sm font-medium text-zinc-500 md:text-lg'
             >
               Minha jornada começou com um grande desejo de explorar a
               programação e a criação web. Ao longo dos últimos anos, mergulhei
@@ -50,8 +50,8 @@ import { Icon } from 'astro-icon/components'
               format='avif'
             />
           </div>
-          <h2 class='text-xl md:text-2xl font-bold'>Minha missão</h2>
-          <p class='font-medium font-mono text-sm md:text-xl text-zinc-500'>
+          <h2 class='text-xl font-bold md:text-2xl'>Minha missão</h2>
+          <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
             Minha missão é clara: criar soluções digitais que não só
             impressionem visualmente, mas também ofereçam resultados tangíveis
             para meus clientes. Acredito firmemente que o segredo do sucesso
@@ -63,12 +63,12 @@ import { Icon } from 'astro-icon/components'
     </header>
 
     <main class='mt-20'>
-      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
+      <div class='container mx-auto max-w-2xl space-y-4 px-4'>
         <div class='space-y-5'>
-          <h2 class='text-xl md:text-xl font-semibold'>
+          <h2 class='text-xl font-semibold md:text-xl'>
             Tecnologias que trabalho:
           </h2>
-          <div class='grid md:grid-cols-3 gap-3'>
+          <div class='grid gap-3 md:grid-cols-3'>
             <Skill
               href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
               name='html'
@@ -85,31 +85,23 @@ import { Icon } from 'astro-icon/components'
               title='Javascript'
             />
           </div>
-          <h2 class='text-xl md:text-xl font-semibold'>
+          <h2 class='text-xl font-semibold md:text-xl'>
             Atualmente estou estudando constantemente:
           </h2>
 
-          <div class='grid md:grid-cols-3 gap-3'>
+          <div class='grid gap-3 md:grid-cols-3'>
             <Skill href='https://react.dev/' name='react' title='React' />
             <Skill href='https://nextjs.org/' name='next' title='Next JS' />
             <Skill href='https://astro.build/' name='astro' title='Astro Js' />
           </div>
         </div>
-
-        <a
-          href='/'
-          class='rounded-md bg-transparent px-3.5 py-2.5 text-sm font-semibold text-violet-100 shadow-sm border border-dark-card flex items-center gap-2 hover:bg-dark-primary hover:text-violet-100 transition-all duration-500 ease-in-out w-fit'
-        >
-          <Icon name='ri:home-2-line' width={20} height={20} />
-          <span>Página inicial</span>
-        </a>
       </div>
+
+      <footer>
+        <div class='container mx-auto max-w-2xl space-y-4 px-4'>
+          <Footer />
+        </div>
+      </footer>
     </main>
-
-    <footer>
-      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
-        <Footer />
-      </div>
-    </footer>
   </div>
 </Layout>

@@ -4,7 +4,7 @@ import Profile from '@/assets/profile.jpg'
 import { Icon } from 'astro-icon/components'
 ---
 
-<nav class='container max-w-2xl mx-auto px-4 mt-10 relative z-10'>
+<nav class='container relative z-10 mx-auto mt-10 max-w-2xl px-4'>
   <div class='space-y-4'>
     <figure>
       <Image
@@ -15,33 +15,33 @@ import { Icon } from 'astro-icon/components'
         class='rounded-full'
       />
     </figure>
-    <h1 class='font-bold text-sm md:text-3xl'>
+    <h1 class='text-sm font-bold md:text-3xl'>
       Olá, sou o Mouro <span class='js-name text-dark-primary'></span>
     </h1>
 
-    <p class='font-medium font-mono text-sm md:text-lg text-zinc-500'>
-      Bem-vindo ao <span class='text-dark-primary font-semibold'>mouro.dev</span
+    <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
+      Bem-vindo ao <span class='font-semibold text-dark-primary'>mouro.dev</span
       > , o lugar onde transformo ideias em experiências digitais. Com
-      <span class='text-dark-primary font-semibold'>HTML</span>, <span
-        class='text-dark-primary font-semibold'>CSS</span
+      <span class='font-semibold text-dark-primary'>HTML</span>, <span
+        class='font-semibold text-dark-primary'>CSS</span
       > e
-      <span class='text-dark-primary font-semibold'>JavaScript</span>, crio
+      <span class='font-semibold text-dark-primary'>JavaScript</span>, crio
       soluções web de alta qualidade para fazer o seu projeto brilhar online.
       Vamos desenvolver algo juntos?
     </p>
 
-    <div class='grid gap-3 items-center grid-cols-2 justify-center w-fit'>
+    <div class='grid w-fit grid-cols-2 items-center justify-center gap-3'>
       <a
         href='/about'
-        class='rounded-md bg-dark-primary px-3.5 py-2.5 text-sm font-semibold text-violet-100 text-center shadow-sm hover:bg-dark-primary/90'
+        class='rounded-md bg-dark-primary px-3.5 py-2.5 text-center text-sm font-semibold text-violet-100 shadow-sm hover:bg-dark-primary/90'
         >Sobre mim</a
       >
       <a
         href='https://wa.me/5521992802319'
         target='_blank'
-        class='text-sm font-semibold leading-6 text-zinc-100 hover:text-violet-500 transition-colors duration-200'
+        class='text-sm font-semibold leading-6 text-zinc-100 transition-colors duration-200 hover:text-violet-500'
         >Entre em contato <span aria-hidden='true'>
-          <Icon name='ri:whatsapp-line' class='inline-block w-4 h-4' />
+          <Icon name='ri:whatsapp-line' class='inline-block h-4 w-4' />
         </span></a
       >
     </div>
@@ -52,9 +52,9 @@ import { Icon } from 'astro-icon/components'
   import Typed from 'typed.js'
 
   const typed = new Typed('.js-name', {
-    strings: ['Desenvolvedor Web', 'Freelancer'],
+    strings: ['Desenvolvedor Frontend', 'Freelancer'],
     typeSpeed: 100,
-    backSpeed: 120,
+    backSpeed: 140,
     loop: true
   })
 </script>

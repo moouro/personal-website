@@ -12,18 +12,18 @@ import { ViewTransitions } from 'astro:transitions'
 
 <Layout title='mouro.dev'>
   <ViewTransitions />
-  <div class='grid grid-rows-newRow gap-4 h-svh'>
+  <div class='grid h-svh grid-rows-newRow gap-4'>
     <header>
       <Hero />
     </header>
 
     <main class='space-y-12'>
       <section>
-        <div class='container max-w-2xl mx-auto px-4 space-y-4'>
-          <div class='flex items-xlline justify-between'>
-            <h2 class='md:text-2xl font-bold'>Projetos Recentes</h2>
+        <div class='container mx-auto max-w-2xl space-y-4 px-4'>
+          <div class='items-xlline flex justify-between'>
+            <h2 class='font-bold md:text-2xl'>Projetos Recentes</h2>
             <a
-              class='hover:text-dark-primary transition-colors flex items-center gap-2'
+              class='flex items-center gap-2 transition-colors hover:text-dark-primary'
               href='/projects'
               >Ver todos <Icon name='ri:external-link-fill' />
             </a>
@@ -45,14 +45,14 @@ import { ViewTransitions } from 'astro:transitions'
       </section>
 
       <section>
-        <div class='container max-w-2xl mx-auto px-4 space-y-4'>
-          <h2 class='md:text-2xl font-bold'>Minha stack</h2>
-          <p class='font-medium font-mono text-sm md:text-xl text-zinc-500'>
+        <div class='container mx-auto max-w-2xl space-y-4 px-4'>
+          <h2 class='font-bold md:text-2xl'>Minha stack</h2>
+          <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
             No meu fluxo de trabalho diário, confio em uma série de ferramentas
             que me ajudam a manter a eficiência e a qualidade em meus projetos.
           </p>
 
-          <div class='grid md:grid-cols-2 gap-3'>
+          <div class='grid gap-3 md:grid-cols-2'>
             {
               stackData.map((stackData) => {
                 return (
@@ -68,7 +68,7 @@ import { ViewTransitions } from 'astro:transitions'
           </div>
           <a
             href='/stack'
-            class='text-xl text-center hover:underline mt-4 block'
+            class='mt-4 block text-center text-base hover:underline'
             >Ver mais ferramentas</a
           >
         </div>
@@ -76,9 +76,7 @@ import { ViewTransitions } from 'astro:transitions'
     </main>
 
     <footer>
-      <div class='container max-w-2xl mx-auto px-4 space-y-4'>
-        <Footer />
-      </div>
+      <Footer />
     </footer>
   </div>
 
