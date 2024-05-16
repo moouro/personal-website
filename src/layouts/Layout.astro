@@ -1,67 +1,25 @@
 ---
 interface Props {
-  title: string
+	title: string
 }
 
 const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang='pt-BR' class='bg-zinc-950 font-sans text-zinc-100 antialiased'>
-  <head>
-    <meta charset='UTF-8' />
-    <meta
-      name='mouro.dev'
-      content='Sou um desenvolvedor front-end  apaixonado por criar experiências digitais incríveis. Com habilidades em HTML, CSS, JavaScript e frameworks modernos, estou pronto para transformar suas ideias em realidade. Entre em contato para discutir seu próximo projeto!'
-    />
-    <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <slot />
-  </body>
+<html lang='pt-BR' class='bg-bg font-sans text-bodyLight antialiased md:text-lg'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta
+			name='mouro.dev'
+			content='Sou um desenvolvedor front-end  apaixonado por criar experiências digitais incríveis. Com habilidades em HTML, CSS, JavaScript e frameworks modernos, estou pronto para transformar suas ideias em realidade. Entre em contato para discutir seu próximo projeto!'
+		/>
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: 'Monaspace Neon', monospace;
-    src: url(/fonts/MonaspaceNeon-Regular.otf) format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Monaspace Neon', monospace;
-    src: url(/fonts/MonaspaceNeon-Bold.otf) format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Monaspace Neon', monospace;
-    src: url(/fonts/MonaspaceNeon-Medium.otf) format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Monaspace Neon', monospace;
-    src: url(/fonts/MonaspaceNeon-ExtraBold.otf) format('opentype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Monaspace Neon', monospace;
-    src: url(/fonts/MonaspaceNeon-SemiBold.otf) format('opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-</style>

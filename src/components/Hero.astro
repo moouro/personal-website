@@ -5,56 +5,69 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <nav class='container relative z-10 mx-auto mt-10 max-w-2xl px-4'>
-  <div class='space-y-4'>
-    <figure>
-      <Image
-        src={Profile}
-        width='150'
-        alt='foto de perfil do  mouro'
-        format='avif'
-        class='rounded-full'
-      />
-    </figure>
-    <h1 class='text-sm font-bold md:text-3xl'>
-      Olá, sou o Mouro <span class='js-name text-dark-primary'></span>
-    </h1>
+	<div class='space-y-4'>
+		<figure>
+			<Image src={Profile} width='150' alt='foto de perfil do  mouro' class='rounded-full' />
+		</figure>
+		<h1 class='text-xl font-bold text-heading md:text-3xl'>
+			Olá, sou o Mouro <span class='js-name text-accent'></span>
+		</h1>
 
-    <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
-      Bem-vindo ao <span class='font-semibold text-dark-primary'>mouro.dev</span
-      > , o lugar onde transformo ideias em experiências digitais. Com
-      <span class='font-semibold text-dark-primary'>HTML</span>, <span
-        class='font-semibold text-dark-primary'>CSS</span
-      > e
-      <span class='font-semibold text-dark-primary'>JavaScript</span>, crio
-      soluções web de alta qualidade para fazer o seu projeto brilhar online.
-      Vamos desenvolver algo juntos?
-    </p>
+		<p>
+			Bem-vindo ao <span class='font-semibold text-accent'>mouro.dev</span>, meu espaço digital onde
+			transformo ideias em experiências interativas na web. Com uma abordagem focada na constante
+			evolução, estou sempre buscando aprimorar minhas habilidades em <span
+				class='font-semibold text-accent'>HTML</span
+			>, <span class='font-semibold text-accent'>CSS</span> e <span
+				class='font-semibold text-accent'>JavaScript</span
+			>.
+		</p>
 
-    <div class='grid w-fit grid-cols-2 items-center justify-center gap-3'>
-      <a
-        href='/about'
-        class='rounded-md bg-dark-primary px-3.5 py-2.5 text-center text-sm font-semibold text-violet-100 shadow-sm hover:bg-dark-primary/90'
-        >Sobre mim</a
-      >
-      <a
-        href='https://wa.me/5521992802319'
-        target='_blank'
-        class='text-sm font-semibold leading-6 text-zinc-100 transition-colors duration-200 hover:text-violet-500'
-        >Entre em contato <span aria-hidden='true'>
-          <Icon name='ri:whatsapp-line' class='inline-block h-4 w-4' />
-        </span></a
-      >
-    </div>
-  </div>
+		<p>
+			Meu compromisso com o aprendizado contínuo reflete meu desejo de oferecer soluções de alta
+			qualidade e acompanhar as últimas tendências do setor. Estou ansioso para colaborar e tornar
+			sua visão uma realidade digital. Vamos criar algo incrível juntos?
+		</p>
+
+		<div class='grid w-fit grid-cols-2 items-center justify-center gap-3'>
+			<a
+				href='/about'
+				class='rounded-md bg-accent px-5 py-2 text-heading duration-150 hover:bg-accent/70 hover:shadow-lg active:bg-accent/80 active:shadow-lg'
+				>Sobre mim</a
+			>
+
+			<div class='flex gap-2'>
+				<a
+					href='https://api.whatsapp.com/send?phone==5521992802319&text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA!'
+					target='_blank'
+					class='hover:text-accent'
+				>
+					<Icon name='whatsapp' size={24} />
+				</a>
+
+				<a href='https://github.com/moouro' target='_blank' class='hover:text-accent'>
+					<Icon name='github' size={24} />
+				</a>
+
+				<a href='https://twitter.com/moouro' class='hover:text-accent' target='_blank'>
+					<Icon name='twitter' size={24} />
+				</a>
+
+				<a href='https://www.instagram.com/moouro' class='hover:text-accent' target='_blank'>
+					<Icon name='instagram' size={24} />
+				</a>
+			</div>
+		</div>
+	</div>
 </nav>
 
 <script>
-  import Typed from 'typed.js'
+	import Typed from 'typed.js'
 
-  const typed = new Typed('.js-name', {
-    strings: ['Desenvolvedor Frontend', 'Freelancer'],
-    typeSpeed: 100,
-    backSpeed: 140,
-    loop: true
-  })
+	const typed = new Typed('.js-name', {
+		strings: ['Desenvolvedor Frontend', 'Bem vindo!'],
+		typeSpeed: 80,
+		backSpeed: 50,
+		loop: true
+	})
 </script>

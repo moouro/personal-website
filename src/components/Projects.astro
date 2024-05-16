@@ -2,27 +2,32 @@
 import { Icon } from 'astro-icon/components'
 
 export interface Props {
-  name: string
-  description: string
-  url: string
+	name: string
+	description: string
+	url: string
+	work?: string
 }
 
-const { name, description, url } = Astro.props
+const { name, description, url, work } = Astro.props
 ---
 
-<d4iv
-  class='flex flex-col justify-between gap-2 rounded-lg border border-zinc-700 bg-dark-card p-4 shadow transition-transform duration-300 ease-in-out hover:scale-105'
+<a
+	href={url}
+	target='_blank'
+	class='flex flex-col justify-between gap-4 rounded-md border border-border bg-surface p-4'
 >
-  <h5 class='mb-2 text-xl font-bold tracking-tight text-zinc-100'>{name}</h5>
+	{
+		work && (
+			<p class='flex w-fit items-center gap-2 rounded-md bg-accent/10 p-1 text-xs text-accent/80'>
+				<span class='h-2 w-2 animate-pulse rounded-full bg-accent' />
+				{work}
+			</p>
+		)
+	}
+	<p class='text-sm'>{description}</p>
 
-  <div class='space-y-3'>
-    <p class='font-normal text-zinc-400'>{description}</p>
-
-    <a
-      target='_blank'
-      class='flex w-fit items-center gap-2 rounded-md bg-dark-primary/40 px-3 py-2 text-sm text-zinc-100
-   transition-colors duration-300 ease-in-out hover:bg-dark-primary/50 hover:text-zinc-50'
-      href={url}>Ver online <Icon name='ri:arrow-right-up-line' /></a
-    >
-  </div>
-</d4iv>
+	<div class='flex items-center justify-between transition-all hover:text-accent'>
+		<h3 class='font-semibold text-heading transition-all hover:text-accent'>{name}</h3>
+		<Icon name='arrow' size={24} />
+	</div>
+</a>

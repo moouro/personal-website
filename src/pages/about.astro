@@ -8,100 +8,85 @@ import Skill from '@/components/Skill.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<Layout title='Sobre mim '>
-  <ViewTransitions />
+<Layout title='Sobre mim'>
+	<ViewTransitions />
 
-  <div class='mt-10 grid h-svh grid-rows-newRow gap-4'>
-    <header>
-      <div class='container mx-auto max-w-2xl space-y-4 px-4'>
-        <div class='space-y-3'>
-          <div class='flex items-center justify-between'>
-            <h1 class='text-lg font-bold md:text-3xl'>Sobre mim</h1>
+	<div class='grid-rows-newRow mt-10 grid h-svh gap-4'>
+		<header>
+			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
+				<div class='space-y-3'>
+					<div class='flex items-center justify-between'>
+						<h1 class='text-lg font-bold md:text-3xl'>Sobre mim</h1>
 
-            <a href='/' class='flex items-center gap-1'>
-              <Icon name='ri:arrow-left-s-line' />
-              <span>Voltar</span>
-            </a>
-          </div>
+						<a href='/' class='flex items-center gap-1'>
+							<span>Voltar</span>
+						</a>
+					</div>
 
-          <div class=''>
-            <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
-              Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me
-              chamar de Mouro. Como desenvolvedor Frontend, estou imerso nesse
-              fascinante universo tecnológico há mais de dois anos
-            </p>
-          </div>
+					<div class=''>
+						<p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
+							Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me chamar de Mouro. Como
+							desenvolvedor Frontend, estou imerso nesse fascinante universo tecnológico há mais de
+							dois anos
+						</p>
+					</div>
 
-          <div class='grid items-end gap-3 md:grid-cols-3'>
-            <p
-              class='md:mt-15 col-span-2 mt-5 font-mono text-sm font-medium text-zinc-500 md:text-lg'
-            >
-              Minha jornada começou com um grande desejo de explorar a
-              programação e a criação web. Ao longo dos últimos anos, mergulhei
-              de cabeça nesse campo dinâmico e desafiador, dedicando-me
-              incansavelmente a aprimorar minhas habilidades e conhecimentos.
-            </p>
+					<div class='grid items-end gap-3 md:grid-cols-3'>
+						<p
+							class='md:mt-15 col-span-2 mt-5 font-mono text-sm font-medium text-zinc-500 md:text-lg'
+						>
+							Minha jornada começou com um grande desejo de explorar a programação e a criação web.
+							Ao longo dos últimos anos, mergulhei de cabeça nesse campo dinâmico e desafiador,
+							dedicando-me incansavelmente a aprimorar minhas habilidades e conhecimentos.
+						</p>
 
-            <Image
-              class='rounded-md shadow-lg'
-              src={AboutImage}
-              alt='Foto de perfil'
-              width='200'
-              format='avif'
-            />
-          </div>
-          <h2 class='text-xl font-bold md:text-2xl'>Minha missão</h2>
-          <p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
-            Minha missão é clara: criar soluções digitais que não só
-            impressionem visualmente, mas também ofereçam resultados tangíveis
-            para meus clientes. Acredito firmemente que o segredo do sucesso
-            reside na combinação de criatividade, habilidade técnica e um
-            profundo entendimento das necessidades do cliente..
-          </p>
-        </div>
-      </div>
-    </header>
+						<Image class='rounded-md shadow-lg' src={AboutImage} alt='Foto de perfil' width='200' />
+					</div>
+					<h2 class='text-xl font-bold md:text-2xl'>Minha missão</h2>
+					<p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
+						Minha missão é clara: criar soluções digitais que não só impressionem visualmente, mas
+						também ofereçam resultados tangíveis para meus clientes. Acredito firmemente que o
+						segredo do sucesso reside na combinação de criatividade, habilidade técnica e um
+						profundo entendimento das necessidades do cliente..
+					</p>
+				</div>
+			</div>
+		</header>
 
-    <main class='mt-20'>
-      <div class='container mx-auto max-w-2xl space-y-4 px-4'>
-        <div class='space-y-5'>
-          <h2 class='text-xl font-semibold md:text-xl'>
-            Tecnologias que trabalho:
-          </h2>
-          <div class='grid gap-3 md:grid-cols-3'>
-            <Skill
-              href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
-              name='html'
-              title='HTML'
-            />
-            <Skill
-              href='https://developer.mozilla.org/pt-BR/docs/Web/CSS'
-              name='css'
-              title='CSS'
-            />
-            <Skill
-              href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'
-              name='js'
-              title='Javascript'
-            />
-          </div>
-          <h2 class='text-xl font-semibold md:text-xl'>
-            Atualmente estou estudando constantemente:
-          </h2>
+		<main class='mt-20'>
+			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
+				<div class='space-y-5'>
+					<h2 class='text-xl font-semibold md:text-xl'>Tecnologias que trabalho:</h2>
+					<div class='grid gap-3 md:grid-cols-3'>
+						<Skill
+							href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
+							name='html'
+							title='HTML'
+						/>
+						<Skill href='https://developer.mozilla.org/pt-BR/docs/Web/CSS' name='css' title='CSS' />
+						<Skill
+							href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'
+							name='js'
+							title='Javascript'
+						/>
+					</div>
+					<h2 class='text-xl font-semibold md:text-xl'>
+						Atualmente estou estudando constantemente:
+					</h2>
 
-          <div class='grid gap-3 md:grid-cols-3'>
-            <Skill href='https://react.dev/' name='react' title='React' />
-            <Skill href='https://nextjs.org/' name='next' title='Next JS' />
-            <Skill href='https://astro.build/' name='astro' title='Astro Js' />
-          </div>
-        </div>
-      </div>
+					<div class='grid gap-3 md:grid-cols-3'>
+						<Skill href='https://react.dev/' name='react' title='React' />
+						<Skill href='https://nextjs.org/' name='next' title='Next JS' />
+						<Skill href='https://astro.build/' name='astro' title='Astro Js' />
+					</div>
+				</div>
+			</div>
 
-      <footer>
-        <div class='container mx-auto max-w-2xl space-y-4 px-4'>
-          <Footer />
-        </div>
-      </footer>
-    </main>
-  </div>
+			<footer>
+				<div class='container mx-auto max-w-2xl space-y-4 px-4'>
+					<Footer />
+				</div>
+			</footer>
+		</main>
+	</div>
 </Layout>
