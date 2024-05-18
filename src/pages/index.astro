@@ -6,6 +6,7 @@ import Stack from '@/components/Stack.astro'
 import Footer from '@/components/Footer.astro'
 import { Icon } from 'astro-icon/components'
 import { ViewTransitions } from 'astro:transitions'
+import Title from '@/components/Title.astro'
 ---
 
 <Layout title='mouro.dev'>
@@ -19,7 +20,7 @@ import { ViewTransitions } from 'astro:transitions'
 			<section class='mt-14'>
 				<div class='container mx-auto max-w-2xl px-4'>
 					<div class='space-y-4'>
-						<h2 class='font-bold text-heading md:text-xl'>Projetos</h2>
+						<Title title='Projetos' />
 
 						<div class='grid
           gap-4 md:grid-cols-1'>
@@ -46,7 +47,7 @@ import { ViewTransitions } from 'astro:transitions'
 				<div class='container mx-auto max-w-2xl px-4'>
 					<div class='space-y-4'>
 						<div>
-							<h2 class='font-bold text-heading md:text-xl'>Ferramentas</h2>
+							<Title title='Ferramentas' />
 							<p>Algumas das ferramentas que utilizo para desenvolver meus projetos.</p>
 						</div>
 

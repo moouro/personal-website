@@ -6,6 +6,7 @@ import AboutImage from '@/assets/about.jpg'
 import Footer from '@/components/Footer.astro'
 import Skill from '@/components/Skill.astro'
 import { Icon } from 'astro-icon/components'
+import Title from '@/components/Title.astro'
 ---
 
 <Layout title='Sobre mim'>
@@ -47,7 +48,7 @@ import { Icon } from 'astro-icon/components'
 							/>
 						</figure>
 					</div>
-					<h2 class='text-xl font-bold text-heading md:text-xl'>Minha missão</h2>
+					<Title title='Minha missão' />
 					<p>
 						Minha missão é clara: criar soluções digitais que não só impressionem visualmente, mas
 						também ofereçam resultados tangíveis para meus clientes. Acredito firmemente que o
@@ -61,7 +62,7 @@ import { Icon } from 'astro-icon/components'
 		<main class='mt-20'>
 			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
 				<div class='space-y-5'>
-					<h2 class='font-semibold text-heading md:text-xl'>Tecnologias que trabalho:</h2>
+					<Title title='Tecnologias que trabalho' />
 					<div class='grid gap-3 md:grid-cols-3'>
 						<Skill
 							href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
@@ -76,7 +77,7 @@ import { Icon } from 'astro-icon/components'
 						/>
 						<Skill href='https://astro.build/' name='astro' title='Astro Js' />
 					</div>
-					<h2 class='font-semibold text-heading'>Atualmente estou estudando constantemente:</h2>
+					<Title title='O que estou estudando' />
 
 					<div class='grid gap-3 md:grid-cols-3'>
 						<Skill href='https://react.dev/' name='react' title='React' />
