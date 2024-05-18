@@ -1,11 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
-import Projects from '@/components/Projects.astro'
+import Project from '@/components/Project.astro'
 import Stack from '@/components/Stack.astro'
 import Footer from '@/components/Footer.astro'
-import projectData from '@/data/projects.json'
-import stackData from '@/data/stack.json'
 import { Icon } from 'astro-icon/components'
 import { ViewTransitions } from 'astro:transitions'
 ---
@@ -19,90 +17,81 @@ import { ViewTransitions } from 'astro:transitions'
 
 		<main>
 			<section class='mt-14'>
-				<div class='container mx-auto max-w-2xl space-y-4 px-4'>
-					<div class='items-line flex justify-between'>
-						<h2 class='font-bold text-heading md:text-2xl'>Projetos</h2>
-					</div>
-					<div class='grid
+				<div class='container mx-auto max-w-2xl px-4'>
+					<div class='space-y-4'>
+						<h2 class='font-bold text-heading md:text-xl'>Projetos</h2>
+
+						<div class='grid
           gap-4 md:grid-cols-1'>
-						<Projects
-							work='Em desenvolvimento'
-							name='Meu site pessoal'
-							description='Com um design intuitivo e moderno, o mouro.dev combina a flexibilidade do Astro Build com a minha criatividade, mas também oferece uma navegação suave.'
-							url='/'
-						/>
+							<Project
+								work='Em desenvolvimento'
+								name='Meu site pessoal'
+								description='Com um design intuitivo e moderno, o mouro.dev combina a flexibilidade do Astro Build com a minha criatividade, mas também oferece uma navegação suave.'
+								url='/'
+							/>
+						</div>
 
-						<!-- {
-							projectData.map((projectData) => {
-								return (
-									<Projects
-										name={projectData.name}
-										description={projectData.description}
-										url={projectData.url}
-									/>
-								)
-							})
-						} -->
+						<a
+							class='flex w-fit items-center gap-4 rounded-md bg-surface px-5 py-2 text-heading transition-all duration-150 hover:bg-surface/70 hover:shadow-lg active:bg-surface/80 active:shadow-lg'
+							href='/projects'
+						>
+							Todos os projetos
+							<Icon name='code' size={15} />
+						</a>
 					</div>
-
-					<a
-						class='mx-auto flex w-fit items-center gap-4 rounded-md bg-surface px-5 py-2 text-heading transition-all duration-150 hover:bg-surface/70 hover:shadow-lg active:bg-surface/80 active:shadow-lg'
-						href='/projects'
-					>
-						Ver todos
-						<Icon name='arrow-linear' size={15} />
-					</a>
 				</div>
 			</section>
 
 			<section class='mt-14'>
-				<div class='container mx-auto max-w-2xl space-y-4 px-4'>
-					<h2 class='text-xl font-bold text-heading md:text-2xl'>Minha stack</h2>
-					<p class=''>
-						Para garantir eficiência e qualidade em meus projetos diários, utilizo uma variedade de
-						ferramentas essenciais.
-					</p>
+				<div class='container mx-auto max-w-2xl px-4'>
+					<div class='space-y-4'>
+						<div>
+							<h2 class='font-bold text-heading md:text-xl'>Ferramentas</h2>
+							<p>Algumas das ferramentas que utilizo para desenvolver meus projetos.</p>
+						</div>
 
-					<div class='grid gap-3 md:grid-cols-2'>
-						{
-							stackData.map((stackData) => {
-								return (
-									<Stack
-										image={stackData.image}
-										title={stackData.title}
-										body={stackData.body}
-										href={stackData.href}
-									/>
-								)
-							})
-						}
+						<div class='grid gap-4 md:grid-cols-2'>
+							<Stack
+								image='vscode.svg'
+								title='Visual Studio Code'
+								body='Editor de código fonte'
+								href='https://code.visualstudio.com/'
+							/>
+
+							<Stack
+								image='figma.svg'
+								title='Figma'
+								body='Design de interfaces'
+								href='https://www.figma.com/'
+							/>
+
+							<Stack
+								image='notion.svg'
+								title='Notion'
+								body='Ferramenta de produtividade'
+								href='https://www.notion.so/'
+							/>
+
+							<Stack
+								image='chrome.svg'
+								title='Google Chrome'
+								body='Navegador web'
+								href='https://www.google.com/chrome/'
+							/>
+						</div>
 					</div>
-					<a href='/stack' class='mt-4 block text-center text-base hover:underline'
-						>Ver mais ferramentas</a
+					<a
+						href='/stacks'
+						class='mt-5 flex w-fit items-center gap-2 transition-all duration-150 hover:text-accent'
 					>
+						Ver mais ferramentas
+						<Icon name='arrow' size={15} />
+					</a>
 				</div>
 			</section>
 		</main>
-
 		<footer>
 			<Footer />
 		</footer>
 	</div>
 </Layout>
-
-<!-- <style>
-		header {
-			background: url(../assets/bg-7.jpg);
-			position: relative;
-		}
-
-		header::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-		}
-	</style> -->

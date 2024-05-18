@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Project from '@/components/Project.astro'
+import projectData from '@/data/projects.json'
+---
+
+<Layout title='Projetos'>
+	<div class='container mx-auto max-w-2xl px-4'>
+		{
+			projectData.map((projectData) => {
+				return (
+					<Project
+						name={projectData.name}
+						description={projectData.description}
+						url={projectData.url}
+					/>
+				)
+			})
+		}
+	</div>
+</Layout>

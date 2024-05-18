@@ -1,14 +1,19 @@
 ---
 import { Image } from 'astro:assets'
-import Profile from '@/assets/profile.jpg'
+import Profile from '@/assets/profile.png'
 import { Icon } from 'astro-icon/components'
 ---
 
-<nav class='container relative z-10 mx-auto mt-10 max-w-2xl px-4'>
+<nav class='container mx-auto mt-10 max-w-2xl px-4'>
 	<div class='space-y-4'>
-		<figure>
-			<Image src={Profile} width='150' alt='foto de perfil do  mouro' class='rounded-full' />
-		</figure>
+		<Image
+			src={Profile}
+			width='150'
+			alt='foto de perfil do  mouro'
+			class='rounded-full'
+			format='avif'
+		/>
+
 		<h1 class='text-xl font-bold text-heading md:text-3xl'>
 			Olá, sou o Mouro <span class='js-name text-accent'></span>
 		</h1>
@@ -32,7 +37,7 @@ import { Icon } from 'astro-icon/components'
 		<div class='grid w-fit grid-cols-2 items-center justify-center gap-3'>
 			<a
 				href='/about'
-				class='rounded-md bg-accent px-5 py-2 text-heading duration-150 hover:bg-accent/70 hover:shadow-lg active:bg-accent/80 active:shadow-lg'
+				class='rounded-md bg-accent px-5 py-2 font-medium text-heading duration-150 hover:bg-accent/70 hover:shadow-lg active:bg-accent/80 active:shadow-lg'
 				>Sobre mim</a
 			>
 
@@ -42,19 +47,19 @@ import { Icon } from 'astro-icon/components'
 					target='_blank'
 					class='hover:text-accent'
 				>
-					<Icon name='whatsapp' size={24} />
+					<Icon name='whatsapp' size={24} aria-label='true' title='Whatsapp' />
 				</a>
 
 				<a href='https://github.com/moouro' target='_blank' class='hover:text-accent'>
-					<Icon name='github' size={24} />
+					<Icon name='github' size={24} aria-label='true' title='Github' />
 				</a>
 
 				<a href='https://twitter.com/moouro' class='hover:text-accent' target='_blank'>
-					<Icon name='twitter' size={24} />
+					<Icon name='twitter' size={24} aria-label='true' title='Twitter' />
 				</a>
 
 				<a href='https://www.instagram.com/moouro' class='hover:text-accent' target='_blank'>
-					<Icon name='instagram' size={24} />
+					<Icon name='instagram' size={24} aria-label='true' title='Instagram' />
 				</a>
 			</div>
 		</div>

@@ -14,7 +14,7 @@ const { name, description, url, work } = Astro.props
 <a
 	href={url}
 	target='_blank'
-	class='flex flex-col justify-between gap-4 rounded-md border border-border bg-surface p-4'
+	class='group flex flex-col justify-between gap-4 rounded-md border border-border bg-surface p-4'
 >
 	{
 		work && (
@@ -26,8 +26,8 @@ const { name, description, url, work } = Astro.props
 	}
 	<p class='text-sm'>{description}</p>
 
-	<div class='flex items-center justify-between transition-all hover:text-accent'>
-		<h3 class='font-semibold text-heading transition-all hover:text-accent'>{name}</h3>
+	<div class='flex items-center justify-between transition-all group-hover:text-accent'>
+		<h3 class='font-semibold text-heading transition-all group-hover:text-accent'>{name}</h3>
 		<Icon name='arrow' size={24} />
 	</div>
 </a>

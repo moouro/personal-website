@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Stack from '../components/Stack.astro'
+import stackData from '@/data/stack.json'
+---
+
+<Layout title='Stacks'>
+	<div class='container mx-auto max-w-2xl px-4'>
+		<div class='grid grid-cols-2'>
+			{
+				stackData.map((stackData) => {
+					return (
+						<Stack
+							image={stackData.image}
+							title={stackData.title}
+							body={stackData.body}
+							href={stackData.href}
+						/>
+					)
+				})
+			}
+		</div>
+	</div>
+</Layout>

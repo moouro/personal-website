@@ -16,38 +16,43 @@ import { Icon } from 'astro-icon/components'
 			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
 				<div class='space-y-3'>
 					<div class='flex items-center justify-between'>
-						<h1 class='text-lg font-bold md:text-3xl'>Sobre mim</h1>
+						<h1 class='text-lg font-bold text-heading md:text-2xl'>Sobre mim</h1>
 
 						<a href='/' class='flex items-center gap-1'>
+							<Icon name='previous' size={20} />
 							<span>Voltar</span>
 						</a>
 					</div>
 
-					<div class=''>
-						<p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
-							Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me chamar de Mouro. Como
-							desenvolvedor Frontend, estou imerso nesse fascinante universo tecnológico há mais de
-							dois anos
-						</p>
-					</div>
+					<p>
+						Bem-vindo ao meu mundo digital! Sou Rodrigo Luiz, mas pode me chamar de Mouro. Como
+						desenvolvedor Frontend, estou imerso nesse fascinante universo tecnológico há mais de
+						dois anos
+					</p>
 
-					<div class='grid items-end gap-3 md:grid-cols-3'>
-						<p
-							class='md:mt-15 col-span-2 mt-5 font-mono text-sm font-medium text-zinc-500 md:text-lg'
-						>
+					<div class='grid items-center gap-3 md:grid-cols-3'>
+						<p class='md:mt-15 col-span-2'>
 							Minha jornada começou com um grande desejo de explorar a programação e a criação web.
 							Ao longo dos últimos anos, mergulhei de cabeça nesse campo dinâmico e desafiador,
 							dedicando-me incansavelmente a aprimorar minhas habilidades e conhecimentos.
 						</p>
 
-						<Image class='rounded-md shadow-lg' src={AboutImage} alt='Foto de perfil' width='200' />
+						<figure>
+							<Image
+								src={AboutImage}
+								width='200'
+								alt='foto de perfil do  mouro'
+								class='rounded-md'
+								format='avif'
+							/>
+						</figure>
 					</div>
-					<h2 class='text-xl font-bold md:text-2xl'>Minha missão</h2>
-					<p class='font-mono text-sm font-medium text-zinc-500 md:text-lg'>
+					<h2 class='text-xl font-bold text-heading md:text-xl'>Minha missão</h2>
+					<p>
 						Minha missão é clara: criar soluções digitais que não só impressionem visualmente, mas
 						também ofereçam resultados tangíveis para meus clientes. Acredito firmemente que o
 						segredo do sucesso reside na combinação de criatividade, habilidade técnica e um
-						profundo entendimento das necessidades do cliente..
+						profundo entendimento das necessidades do cliente.
 					</p>
 				</div>
 			</div>
@@ -56,7 +61,7 @@ import { Icon } from 'astro-icon/components'
 		<main class='mt-20'>
 			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
 				<div class='space-y-5'>
-					<h2 class='text-xl font-semibold md:text-xl'>Tecnologias que trabalho:</h2>
+					<h2 class='font-semibold text-heading md:text-xl'>Tecnologias que trabalho:</h2>
 					<div class='grid gap-3 md:grid-cols-3'>
 						<Skill
 							href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
@@ -69,15 +74,13 @@ import { Icon } from 'astro-icon/components'
 							name='js'
 							title='Javascript'
 						/>
+						<Skill href='https://astro.build/' name='astro' title='Astro Js' />
 					</div>
-					<h2 class='text-xl font-semibold md:text-xl'>
-						Atualmente estou estudando constantemente:
-					</h2>
+					<h2 class='font-semibold text-heading'>Atualmente estou estudando constantemente:</h2>
 
 					<div class='grid gap-3 md:grid-cols-3'>
 						<Skill href='https://react.dev/' name='react' title='React' />
 						<Skill href='https://nextjs.org/' name='next' title='Next JS' />
-						<Skill href='https://astro.build/' name='astro' title='Astro Js' />
 					</div>
 				</div>
 			</div>
