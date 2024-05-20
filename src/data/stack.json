@@ -1,26 +1,32 @@
 [
   {
-    "image": "/vscode.svg",
-    "title": "Visual Studio Code",
-    "body": "Editor de código",
-    "href": "https://code.visualstudio.com/"
+    "image": "/iterm2.png",
+    "title": "Iterm2",
+    "body": "terminal",
+    "href": "https://iterm2.com/"
   },
   {
-    "image": "/notion.svg",
-    "title": "Notion",
-    "body": "Ferramenta de produtividade",
-    "href": "https://www.notion.so/"
+    "image": "/firefox.svg",
+    "title": "Firefox",
+    "body": "Navegador",
+    "href": "https://www.mozilla.org/pt-BR/firefox/new/"
   },
   {
-    "image": "/figma.svg",
-    "title": "Figma",
-    "body": "Ferramenta de design",
-    "href": "https://www.figma.com/"
+    "image": "/gpt.svg",
+    "title": "ChatGPT",
+    "body": " Chatbot",
+    "href": "https://chat.openai.com/"
   },
   {
-    "image": "/chrome.svg",
-    "title": "Google Chrome",
-    "body": "Navegador da web",
-    "href": "https://www.google.com/chrome/"
+    "image": "/fig.svg",
+    "title": "Fig terminal",
+    "body": " terminal com IA",
+    "href": "https://chat.openai.com/"
+  },
+  {
+    "image": "/ark.svg",
+    "title": "Ark",
+    "body": " Navegador",
+    "href": "https://arc.net/downloaded"
   }
 ]

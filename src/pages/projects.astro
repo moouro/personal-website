@@ -1,21 +1,52 @@
 ---
+import Footer from '@/components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 import Project from '@/components/Project.astro'
 import projectData from '@/data/projects.json'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
+import Navigation from '@/components/Navigation.astro'
+import Title from '@/components/Title.astro'
 ---
 
 <Layout title='Projetos'>
-	<div class='container mx-auto max-w-2xl px-4'>
-		{
-			projectData.map((projectData) => {
-				return (
-					<Project
-						name={projectData.name}
-						description={projectData.description}
-						url={projectData.url}
-					/>
-				)
-			})
-		}
+	<ViewTransitions />
+	<div class='mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4'>
+		<header>
+			<div class="class='container mx-auto max-w-2xl px-4">
+				<Navigation title='Projetos' />
+			</div>
+		</header>
+		<main>
+			<div class='container mx-auto max-w-2xl px-4'>
+				<div class='mb-8 space-y-4'>
+					<Title title='Explorando meu portfólio' />
+					<p>
+						Bem-vindo! Aqui, você encontrará os projetos que desenvolvi. Cada projeto reflete minha
+						dedicação e atenção aos detalhes, sempre focando em entregar experiências de usuário
+						excepcionais.
+					</p>
+					<p>
+						Abaixo, você encontrará alguns exemplos do que tenho criado. À medida que avanço em meus
+						estudos e adquiro mais conhecimentos, estarei adicionando novos projetos a esta seção.
+					</p>
+				</div>
+				<div class='grid gap-4 md:grid-cols-2'>
+					{
+						projectData.map((projectData) => {
+							return (
+								<Project
+									name={projectData.name}
+									description={projectData.description}
+									url={projectData.url}
+								/>
+							)
+						})
+					}
+				</div>
+			</div>
+		</main>
+		<footer>
+			<Footer />
+		</footer>
 	</div>
 </Layout>

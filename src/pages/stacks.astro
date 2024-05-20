@@ -1,24 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Stack from '../components/Stack.astro'
+import Footer from '@/components/Footer.astro'
+import Navigation from '@/components/Navigation.astro'
+import Stack from '@/components/Stack.astro'
+import Layout from '@/layouts/Layout.astro'
+import { ViewTransitions } from 'astro:transitions'
 import stackData from '@/data/stack.json'
+import Title from '@/components/Title.astro'
 ---
 
-<Layout title='Stacks'>
-	<div class='container mx-auto max-w-2xl px-4'>
-		<div class='grid grid-cols-2'>
-			{
-				stackData.map((stackData) => {
-					return (
-						<Stack
-							image={stackData.image}
-							title={stackData.title}
-							body={stackData.body}
-							href={stackData.href}
-						/>
-					)
-				})
-			}
-		</div>
+<Layout title='Ferramentas| mouro.dev'>
+	<ViewTransitions />
+	<div class='mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4'>
+		<header>
+			<div class="class='container mx-auto max-w-2xl px-4">
+				<Navigation title='Ferramentas' />
+			</div>
+		</header>
+		<main>
+			<div class='container mx-auto max-w-2xl px-4'>
+				<div class='mb-8 space-y-4'>
+					<Title title='Explorando minhas ferramentas' />
+					<p>
+						Bem-vindo à seção onde compartilho as ferramentas e tecnologias que utilizo no meu dia a
+						dia como desenvolvedor Frontend.
+					</p>
+
+					<p>
+						O mundo do desenvolvimento web é vasto e em constante evolução. Aqui estão algumas das
+						ferramentas que eu uso regularmente e que me ajudam a criar soluções digitais eficazes e
+						inovadoras.
+					</p>
+				</div>
+				<div class='grid gap-4 md:grid-cols-2'>
+					{
+						stackData.map((stackData) => {
+							return (
+								<Stack
+									image={stackData.image}
+									title={stackData.title}
+									body={stackData.body}
+									href={stackData.href}
+								/>
+							)
+						})
+					}
+				</div>
+			</div>
+		</main>
+		<footer>
+			<Footer />
+		</footer>
 	</div>
 </Layout>
