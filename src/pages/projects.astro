@@ -30,7 +30,7 @@ import Title from '@/components/Title.astro'
 						estudos e adquiro mais conhecimentos, estarei adicionando novos projetos a esta seção.
 					</p>
 				</div>
-				<div class='grid gap-4 md:grid-cols-2'>
+				<div class='grid gap-4 '>
 					{
 						projectData.map((projectData) => {
 							return (
@@ -38,6 +38,10 @@ import Title from '@/components/Title.astro'
 									name={projectData.name}
 									description={projectData.description}
 									url={projectData.url}
+									stack={projectData.stack}
+									icon={projectData.icon}
+									
+									
 								/>
 							)
 						})
