@@ -4,21 +4,25 @@ import { ViewTransitions } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
 ---
 
-<Layout title='Página não encontrada'>
+<Layout title="Página não encontrada">
 	<ViewTransitions />
-	<div class='grid h-svh items-center justify-center'>
-		<main class='grid grid-rows-2 place-items-center px-6 py-24 sm:py-32 lg:px-8'>
-			<div class='text-center'>
-				<p class='font-bold text-accent'>404</p>
-				<h1 class='mt-4 text-3xl font-bold tracking-tight text-heading sm:text-5xl'>
+	<div class="grid h-svh items-center justify-center">
+		<main class="grid grid-rows-2 place-items-center px-6 py-24 sm:py-32 lg:px-8">
+			<div class="text-center">
+				<p class="font-bold text-accent">404</p>
+				<h1 class="mt-4 text-3xl font-bold tracking-tight text-heading sm:text-5xl">
 					Página não encontrada
 				</h1>
-				<p class='mt-6 leading-7'>Lamento, mas não consegui encontrar a página que procura.</p>
-				<div class='mt-10 flex items-center justify-center gap-x-6'>
+				<p class="mt-6 leading-7">Lamento, mas não consegui encontrar a página que procura.</p>
+				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a
-						href='/'
-						class='rounded-md bg-accent px-5 py-2 text-white duration-150 hover:bg-accent/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 active:shadow-lg'
-						>Ir para home</a
+						href="/"
+						class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-accent px-6 font-medium text-neutral-200"
+						><span>Ir para Home</span><div
+							class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"
+						>
+							<div class="relative h-full w-8 bg-white/20"></div>
+						</div></a
 					>
 				</div>
 			</div>

@@ -1,22 +1,24 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
-	image: string
 	title: string
 	body: string
 	href: string
+	src: string
+	alt: string
 }
-
-const { image, href, title, body } = Astro.props
+const { href, title, body, alt, src, ...attrs } = Astro.props
 ---
 
 <a
 	href={href}
-	target='_blank'
-	class='hover:bg-bg-secondary p-4transition-all flex items-center gap-4 rounded-md border border-border p-4 duration-200 hover:bg-surface hover:shadow-md'
+	target="_blank"
+	class="hover:bg-bg-secondary p-4transition-all flex items-center gap-4 rounded-md border border-border p-4 duration-200 hover:bg-surface hover:shadow-md"
 >
-	<img src={image} alt='Imagem da Ferramenta' class='w-12' loading='eager' />
-	<div class='space-y-2'>
-		<h3 class='text-sm font-bold text-heading'>{title}</h3>
-		<p class='text-xs'>{body}</p>
+	<Image src={src} {...attrs} alt={alt} width={48} height={48} />
+	<div class="space-y-2">
+		<h3 class="text-sm font-bold text-heading">{title}</h3>
+		<p class="text-xs">{body}</p>
 	</div>
 </a>

@@ -1,32 +1,37 @@
 [
-  {
-    "image": "/iterm2.png",
-    "title": "Iterm2",
-    "body": "terminal",
-    "href": "https://iterm2.com/"
-  },
-  {
-    "image": "/firefox.svg",
-    "title": "Firefox",
-    "body": "Navegador",
-    "href": "https://www.mozilla.org/pt-BR/firefox/new/"
-  },
-  {
-    "image": "/gpt.svg",
-    "title": "ChatGPT",
-    "body": " Chatbot",
-    "href": "https://chat.openai.com/"
-  },
-  {
-    "image": "/fig.svg",
-    "title": "Fig terminal",
-    "body": " terminal com IA",
-    "href": "https://chat.openai.com/"
-  },
-  {
-    "image": "/ark.svg",
-    "title": "Ark",
-    "body": " Navegador",
-    "href": "https://arc.net/downloaded"
-  }
+	{
+		"src": "/iterm2.png",
+		"title": "Iterm2",
+		"body": "terminal",
+		"href": "https://iterm2.com/",
+		"alt": "Imagem do terminal Iterm2"
+	},
+	{
+		"src": "/firefox.svg",
+		"title": "Firefox",
+		"body": "Navegador",
+		"href": "https://www.mozilla.org/pt-BR/firefox/new/",
+		"alt": "Imagem do Navegador firefox"
+	},
+	{
+		"src": "/gpt.svg",
+		"title": "ChatGPT",
+		"body": " Chatbot",
+		"href": "https://chat.openai.com/",
+		"alt": "Imagem do Chatbot GPT"
+	},
+	{
+		"src": "/fig.svg",
+		"title": "Fig terminal",
+		"body": " terminal com IA",
+		"href": "https://chat.openai.com/",
+		"alt": "Imagem do terminal Fig"
+	},
+	{
+		"src": "/ark.svg",
+		"title": "Ark",
+		"body": " Navegador",
+		"href": "https://arc.net/downloaded",
+		"alt": "Imagem do Navegador Ark"
+	}
 ]

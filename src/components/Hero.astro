@@ -2,64 +2,74 @@
 import { Image } from 'astro:assets'
 import Profile from '@/assets/profile.png'
 import { Icon } from 'astro-icon/components'
+import Title from '@/components/Title.astro'
+import HeroSkill from '@/components/HeroSkill.astro'
 ---
 
-<nav class='container mx-auto mt-10 max-w-2xl px-4'>
-	<div class='space-y-4'>
+<nav class="container mx-auto mt-10 max-w-2xl px-4">
+	<div class="space-y-4">
 		<Image
 			src={Profile}
-			width='150'
-			alt='foto de perfil do  mouro'
-			class='rounded-full'
-			format='avif'
+			width="150"
+			alt="foto de perfil do  mouro"
+			class="rounded-full"
+			format="avif"
+			loading={'eager'}
 		/>
 
-		<h1 class='text-xl font-bold text-heading md:text-3xl'>
-			Olá, sou o Mouro <span class='js-name text-accent'></span>
+		<h1 class="text-xl font-bold text-heading md:text-3xl">
+			Olá, sou o Mouro <span class="js-name text-accent"></span>
 		</h1>
 
 		<p>
-			Bem-vindo ao <span class='font-semibold text-accent'>mouro.dev</span>, meu espaço digital onde
-			transformo ideias em experiências interativas na web. Com uma abordagem focada na constante
-			evolução, estou sempre buscando aprimorar minhas habilidades em <span
-				class='font-semibold text-accent'>HTML</span
-			>, <span class='font-semibold text-accent'>CSS</span> e <span
-				class='font-semibold text-accent'>JavaScript</span
-			>.
+			Bem-vindo ao mouro.dev, meu espaço digital onde transformo ideias em experiências interativas
+			na web. Com uma abordagem focada na evolução constante, estou sempre aprimorando minhas
+			habilidades
 		</p>
-
+		<Title title="Habilidades" />
+		<div class="flex flex-wrap gap-4">
+			<HeroSkill title="HTML" />
+			<HeroSkill title="CSS" />
+			<HeroSkill title="JavaScript" />
+			<HeroSkill title="Astro build" />
+			<HeroSkill title="Tailwind CSS" />
+			<HeroSkill title="Git" />
+		</div>
 		<p>
 			Meu compromisso com o aprendizado contínuo reflete meu desejo de oferecer soluções de alta
-			qualidade e acompanhar as últimas tendências do setor. Estou ansioso para colaborar e tornar
-			sua visão uma realidade digital. Vamos criar algo incrível juntos?
+			qualidade, acompanhando as últimas tendências do setor. Estou ansioso para colaborar e
+			transformar sua visão em realidade digital. Vamos criar algo juntos?
 		</p>
 
-		<div class='grid w-fit grid-cols-2 items-center justify-center gap-3'>
+		<div class="grid w-fit grid-cols-2 items-center justify-center gap-3">
 			<a
-				href='/about'
-				class='rounded-md bg-accent px-5 py-2 font-medium text-heading duration-150 hover:bg-accent/70 hover:shadow-lg active:bg-accent/80 active:shadow-lg'
-				>Sobre mim</a
-			>
-
-			<div class='flex gap-2'>
-				<a
-					href='https://api.whatsapp.com/send?phone==5521992802319&text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA!'
-					target='_blank'
-					class='hover:text-accent'
+				href="/about"
+				class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-accent px-6 font-medium text-neutral-200"
+				><span>Sobre mim</span><div
+					class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"
 				>
-					<Icon name='whatsapp' size={24} aria-label='true' title='Whatsapp' />
+					<div class="relative h-full w-8 bg-white/20"></div>
+				</div></a
+			>
+			<div class="flex gap-2">
+				<a
+					href="https://api.whatsapp.com/send?phone==5521992802319&text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA!"
+					target="_blank"
+					class="hover:text-accent"
+				>
+					<Icon name="whatsapp" size={24} aria-label="true" title="Whatsapp" />
 				</a>
 
-				<a href='https://github.com/moouro' target='_blank' class='hover:text-accent'>
-					<Icon name='github' size={24} aria-label='true' title='Github' />
+				<a href="https://github.com/moouro" target="_blank" class="hover:text-accent">
+					<Icon name="github" size={24} aria-label="true" title="Github" />
 				</a>
 
-				<a href='https://twitter.com/moouro' class='hover:text-accent' target='_blank'>
-					<Icon name='twitter' size={24} aria-label='true' title='Twitter' />
+				<a href="https://twitter.com/moouro" class="hover:text-accent" target="_blank">
+					<Icon name="twitter" size={24} aria-label="true" title="Twitter" />
 				</a>
 
-				<a href='https://www.instagram.com/moouro' class='hover:text-accent' target='_blank'>
-					<Icon name='instagram' size={24} aria-label='true' title='Instagram' />
+				<a href="https://www.instagram.com/moouro" class="hover:text-accent" target="_blank">
+					<Icon name="instagram" size={24} aria-label="true" title="Instagram" />
 				</a>
 			</div>
 		</div>
@@ -71,8 +81,8 @@ import { Icon } from 'astro-icon/components'
 
 	const typed = new Typed('.js-name', {
 		strings: ['Desenvolvedor Frontend.', 'moro no Rio de Janeiro.'],
-		typeSpeed: 80,
-		backSpeed: 50,
+		typeSpeed: 50,
+		backSpeed: 60,
 		loop: true
 	})
 </script>
