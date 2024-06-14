@@ -2,81 +2,59 @@
 import { Image } from 'astro:assets'
 import Profile from '@/assets/profile.png'
 import { Icon } from 'astro-icon/components'
-import Title from '@/components/Title.astro'
-import HeroSkill from '@/components/HeroSkill.astro'
 ---
 
-<nav class="container mx-auto mt-10 max-w-2xl px-4">
+<nav class="container mx-auto mt-10 max-w-3xl px-4">
 	<div class="space-y-4">
 		<Image
 			src={Profile}
 			width="150"
-			alt="foto de perfil do  mouro"
+			alt="foto de perfil do Mouro"
 			class="rounded-full"
 			format="avif"
 			loading={'eager'}
 		/>
-
 		<h1 class="text-xl font-bold text-heading md:text-3xl">
-			Olá, sou o Mouro <span class="js-name text-accent"></span>
+			Olá, sou o <span class="js-name text-accent">Mouro</span>
 		</h1>
-
-		<p>
-			Bem-vindo ao mouro.dev, meu espaço digital onde transformo ideias em experiências interativas
-			na web. Com uma abordagem focada na evolução constante, estou sempre aprimorando minhas
-			habilidades
-		</p>
-		<Title title="Habilidades" />
-		<div class="flex flex-wrap gap-4">
-			<HeroSkill title="HTML" />
-			<HeroSkill title="CSS" />
-			<HeroSkill title="JavaScript" />
-			<HeroSkill title="Astro build" />
-			<HeroSkill title="Tailwind CSS" />
-			<HeroSkill title="Git" />
-		</div>
-		<p>
-			Meu compromisso com o aprendizado contínuo reflete meu desejo de oferecer soluções de alta
-			qualidade, acompanhando as últimas tendências do setor. Estou ansioso para colaborar e
-			transformar sua visão em realidade digital. Vamos criar algo juntos?
+		<p class="text-lg leading-relaxed">
+			Sou um desenvolvedor front-end, moro no Rio de Janeiro, estou focado em <span
+				class="font-semibold text-accent">JavaScript</span
+			> e <span class="font-semibold text-accent">TypeScript</span>. Utilizo <span
+				class="font-semibold text-accent">React</span
+			>, <span class="font-semibold text-accent">Astro</span>, <span
+				class="font-semibold text-accent">Tailwind CSS</span
+			>, <span class="font-semibold text-accent">Sass</span> e <span
+				class="font-semibold text-accent">Vite.js</span
+			> para criar interfaces modernas e responsivas. Estou sempre aprendendo e aplicando as melhores
+			práticas em desenvolvimento web.
 		</p>
 
-		<div class="grid w-fit grid-cols-2 items-center justify-center gap-3">
-			<a
-				href="/about"
-				class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md bg-accent px-6 font-bold text-heading"
-				><span>Sobre mim</span><div
-					class="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]"
-				>
-					<div class="relative h-full w-8 bg-white/20"></div>
-				</div></a
-			>
-			<div class="flex gap-2">
-				<a
-					href="https://api.whatsapp.com/send?phone==5521992802319&text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA!"
-					target="_blank"
-					class="hover:text-accent"
-				>
-					<Icon name="whatsapp" size={24} aria-label="true" title="Whatsapp" />
-				</a>
+		<p class="text-lg leading-relaxed">
+			Tenho experiência prática com projetos pessoais, nos quais desenvolvi diversas aplicações web
+			interativas utilizando <span class="font-semibold text-accent">Astro</span> e <span
+				class="font-semibold text-accent">Tailwind CSS</span
+			>. Meu compromisso com o aprendizado contínuo me permite acompanhar as últimas tendências do
+			setor.
+		</p>
 
-				<a href="https://github.com/moouro" target="_blank" class="hover:text-accent">
-					<Icon name="github" size={24} aria-label="true" title="Github" />
-				</a>
+		<p class="text-lg leading-relaxed">
+			Estou em busca da minha primeira oportunidade profissional como desenvolvedor front-end, onde
+			possa contribuir com minhas habilidades e continuar a crescer na área de desenvolvimento web.
+		</p>
 
-				<a href="https://twitter.com/moouro" class="hover:text-accent" target="_blank">
-					<Icon name="twitter" size={24} aria-label="true" title="Twitter" />
-				</a>
-
-				<a href="https://www.instagram.com/moouro" class="hover:text-accent" target="_blank">
-					<Icon name="instagram" size={24} aria-label="true" title="Instagram" />
-				</a>
-			</div>
-		</div>
+		<p class="text-lg font-semibold leading-relaxed text-accent">Vamos criar algo juntos?</p>
+		<a
+			href="/about"
+			class="flex w-fit items-center rounded bg-accent px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out hover:bg-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-opacity-75"
+			aria-label="Sobre mim"
+		>
+			Sobre mim
+		</a>
 	</div>
 </nav>
 
-<script>
+<!-- <script>
 	import Typed from 'typed.js'
 
 	const typed = new Typed('.js-name', {
@@ -85,4 +63,4 @@ import HeroSkill from '@/components/HeroSkill.astro'
 		backSpeed: 60,
 		loop: true
 	})
-</script>
+</script> -->

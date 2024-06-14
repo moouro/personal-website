@@ -2,98 +2,43 @@
 import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
 import Project from '@/components/Project.astro'
-import Stack from '@/components/Stack.astro'
 import Footer from '@/components/Footer.astro'
-import { Icon } from 'astro-icon/components'
 import { ViewTransitions } from 'astro:transitions'
 import Title from '@/components/Title.astro'
 ---
 
 <Layout title="mouro.dev">
 	<ViewTransitions />
-	<div class="grid h-svh grid-rows-[auto_1fr_auto] gap-4">
+	<div class="grid h-svh grid-rows-[auto_1fr_auto] gap-6">
 		<header>
 			<Hero />
 		</header>
 
 		<main>
 			<section class="mt-14">
-				<div class="container mx-auto max-w-2xl px-4">
+				<div class="container mx-auto max-w-3xl px-4">
 					<div class="space-y-4">
 						<Title title="Projetos" />
 
-						<div class="grid
-          gap-4 md:grid-cols-1">
+						<div class="grid gap-4 md:grid-cols-2">
 							<Project
 								work="Em desenvolvimento"
-								name="Meu site pessoal"
-								description="Com um design intuitivo e moderno, o mouro.dev combina a flexibilidade do Astro Build com a minha criatividade, mas também oferece uma navegação suave. "
-								url="/"
+								name="Portfolio minimo"
+								description="Um portfólio minimalista para mostrar seus projetos e habilidades."
+								url="https://github.com/moouro/minimal-portfolio"
 								stack="Desenvolvido com Atro Build e Tailwind CSS"
 								icon="astro"
 							/>
 						</div>
 
-						<a
+						<!-- <a
 							class="flex w-fit items-center gap-4 rounded-md bg-surface px-5 py-2 text-heading font-bold transition-all duration-150 hover:bg-surface/70 hover:shadow-lg active:bg-surface/80 active:shadow-lg"
 							href="/projects"
 						>
 							Mais projetos
 							<Icon name="code" size={15} />
-						</a>
+						</a> -->
 					</div>
-				</div>
-			</section>
-
-			<section class="mt-14">
-				<div class="container mx-auto max-w-2xl px-4">
-					<div class="space-y-4">
-						<div>
-							<Title title="Ferramentas" />
-							<p>Algumas das ferramentas que utilizo para desenvolver meus projetos.</p>
-						</div>
-
-						<div class="grid gap-4 md:grid-cols-2">
-							<Stack
-								src="/vscode.svg"
-								alt="Visual Studio Code logo"
-								title="Visual Studio Code"
-								body="Editor de código fonte"
-								href="https://code.visualstudio.com/"
-							/>
-
-							<Stack
-								src="/figma.svg"
-								alt="Figma logo"
-								title="Figma"
-								body="Design de interfaces"
-								href="https://www.figma.com/"
-							/>
-
-							<Stack
-								src="/notion.svg"
-								alt="Notion logo"
-								title="Notion"
-								body="Ferramenta de produtividade"
-								href="https://www.notion.so/"
-							/>
-
-							<Stack
-								src="/chrome.svg"
-								alt="Google Chrome logo"
-								title="Google Chrome"
-								body="Navegador web"
-								href="https://www.google.com/chrome/"
-							/>
-						</div>
-					</div>
-					<a
-							class="flex w-fit items-center gap-4 rounded-md bg-surface px-5 py-2 text-heading transition-all duration-150 hover:bg-surface/70 hover:shadow-lg font-bold  active:bg-surface/80 active:shadow-lg mt-4"
-							href="/stacks"
-						>
-							Mais ferramentas
-							<Icon name="stack" size={15}  />
-						</a>
 				</div>
 			</section>
 		</main>

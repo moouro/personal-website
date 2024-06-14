@@ -9,26 +9,25 @@ import Title from '@/components/Title.astro'
 import Navigation from '@/components/Navigation.astro'
 ---
 
-<Layout title='Sobre mim'>
+<Layout title="Sobre mim">
 	<ViewTransitions />
 
-	<div class='grid-rows-newRow mt-10 grid h-svh gap-4'>
+	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
 		<header>
-			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
-				<div class='space-y-3'>
-					<Navigation title='Sobre mim' />
+			<div class="container mx-auto max-w-3xl space-y-4 px-4">
+				<div class="space-y-3">
+					<Navigation title="Sobre mim" />
 
-					<p>
-						Bem-vindo ao meu mundo digital! Sou <span class='font-bold text-accent'
-							>Rodrigo Luiz</span
-						>, mas pode me chamar de <span class='font-bold text-accent'> Mouro</span>. Como
-						desenvolvedor Frontend, estou imerso no fascinante universo tecnológico há um ano. Minha
-						trajetória no desenvolvimento web é marcada pela dedicação contínua em aprimorar minhas
-						habilidades e conhecimentos.
+					<p class="text-lg leading-relaxed">
+						Bem-vindo! sou <span class="font-bold text-accent">Rodrigo Luiz</span>, mas pode me
+						chamar de <span class="font-bold text-accent"> Mouro</span>. Como desenvolvedor
+						Frontend, estou imerso no fascinante universo tecnológico há um ano. Minha trajetória no
+						desenvolvimento web é marcada pela dedicação contínua em aprimorar minhas habilidades e
+						conhecimentos.
 					</p>
 
-					<div class='grid items-center gap-3 md:grid-cols-3'>
-						<p class='md:mt-15 col-span-2'>
+					<div class="grid items-center gap-3 md:grid-cols-3">
+						<p class="md:mt-15 col-span-2 text-lg leading-relaxed">
 							Desde então, não paro de me surpreender com as infinitas possibilidades que a web
 							oferece. Cada projeto é uma oportunidade de aprender algo novo e superar desafios.
 						</p>
@@ -36,47 +35,46 @@ import Navigation from '@/components/Navigation.astro'
 						<figure>
 							<Image
 								src={AboutImage}
-								width='200'
-								alt='foto de perfil do  mouro'
-								class='rounded-md'
-								format='avif'
+								width="200"
+								alt="foto de perfil do  mouro"
+								class="rounded-md"
+								format="avif"
 							/>
 						</figure>
 					</div>
-					<Title title='Objetivo' />
-					<p>
-						Estou constantemente em busca de novas oportunidades para aplicar minha paixão pela
-						tecnologia e minha expertise em desenvolvimento Frontend. Se você precisa de um
-						desenvolvedor comprometido e criativo para transformar suas ideias em realidade, vamos
-						conversar!
+					<Title title="Objetivo Profissional" />
+					<p class="text-lg leading-relaxed">
+						Busco oportunidades na área de desenvolvimento front-end, onde posso aplicar minhas
+						habilidades em JavaScript e contribuir para projetos inovadores. Estou aberto a novos
+						desafios que me permitam crescer e me adaptar a novas tecnologias e metodologias.
 					</p>
 				</div>
 			</div>
 		</header>
 
-		<main class='mt-20'>
-			<div class='container mx-auto max-w-2xl space-y-4 px-4'>
-				<div class='space-y-5'>
-					<Title title='Tecnologias que trabalho' />
-					<div class='grid gap-3 md:grid-cols-3'>
+		<main class="mt-20">
+			<div class="container mx-auto max-w-3xl space-y-4 px-4">
+				<div class="space-y-5">
+					<Title title="Tecnologias que trabalho" />
+					<div class="grid gap-3 md:grid-cols-3">
 						<Skill
-							href='https://developer.mozilla.org/pt-BR/docs/Web/HTML'
-							name='html'
-							title='HTML'
+							href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+							name="html"
+							title="HTML"
 						/>
-						<Skill href='https://developer.mozilla.org/pt-BR/docs/Web/CSS' name='css' title='CSS' />
+						<Skill href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" name="css" title="CSS" />
 						<Skill
-							href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript'
-							name='js'
-							title='Javascript'
+							href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+							name="js"
+							title="Javascript"
 						/>
-						<Skill href='https://astro.build/' name='astro' title='Astro Js' />
+						<Skill href="https://astro.build/" name="astro" title="Astro Js" />
 					</div>
-					<Title title='O que estou estudando' />
+					<Title title="O que estou estudando" />
 
-					<div class='grid gap-3 md:grid-cols-3'>
-						<Skill href='https://react.dev/' name='react' title='React' />
-						<Skill href='https://nextjs.org/' name='next' title='Next JS' />
+					<div class="grid gap-3 md:grid-cols-3">
+						<Skill href="https://react.dev/" name="react" title="React" />
+						<Skill href="https://nextjs.org/" name="next" title="Next JS" />
 					</div>
 				</div>
 			</div>
