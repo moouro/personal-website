@@ -44,9 +44,9 @@ import Navigation from '@/components/Navigation.astro'
 					</div>
 					<Title title="Objetivo Profissional" />
 					<p class="text-lg leading-relaxed">
-						Busco oportunidades na área de desenvolvimento front-end, onde posso aplicar minhas
-						habilidades em JavaScript e contribuir para projetos inovadores. Estou aberto a novos
-						desafios que me permitam crescer e me adaptar a novas tecnologias e metodologias.
+						Estou em busca da minha primeira oportunidade profissional como desenvolvedor front-end,
+						onde possa contribuir com minhas habilidades e continuar a crescer na área de
+						desenvolvimento web.
 					</p>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ import Navigation from '@/components/Navigation.astro'
 			<div class="container mx-auto max-w-3xl space-y-4 px-4">
 				<div class="space-y-5">
 					<Title title="Tecnologias que trabalho" />
-					<div class="grid gap-3 md:grid-cols-3">
+					<div class="flex flex-wrap gap-4">
 						<Skill
 							href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
 							name="html"
@@ -69,19 +69,21 @@ import Navigation from '@/components/Navigation.astro'
 							title="Javascript"
 						/>
 						<Skill href="https://astro.build/" name="astro" title="Astro Js" />
+
+						<Skill href="https://astro.build/" name="tailwindcss" title="Tailwind CSS " />
 					</div>
 					<Title title="O que estou estudando" />
 
-					<div class="grid gap-3 md:grid-cols-3">
+					<div class="flex flex-wrap gap-4">
 						<Skill href="https://react.dev/" name="react" title="React" />
 						<Skill href="https://nextjs.org/" name="next" title="Next JS" />
 					</div>
 				</div>
 			</div>
-
-			<footer>
-				<Footer />
-			</footer>
 		</main>
+
+		<footer>
+			<Footer />
+		</footer>
 	</div>
 </Layout>

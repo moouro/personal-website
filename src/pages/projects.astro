@@ -8,18 +8,18 @@ import Navigation from '@/components/Navigation.astro'
 import Title from '@/components/Title.astro'
 ---
 
-<Layout title='Projetos'>
+<Layout title="Projetos">
 	<ViewTransitions />
-	<div class='mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4'>
+	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
 		<header>
 			<div class="class='container mx-auto max-w-2xl px-4">
-				<Navigation title='Projetos' />
+				<Navigation title="Projetos" />
 			</div>
 		</header>
 		<main>
-			<div class='container mx-auto max-w-2xl px-4'>
-				<div class='mb-8 space-y-4'>
-					<Title title='Explorando meu portfólio' />
+			<div class="container mx-auto max-w-2xl px-4">
+				<div class="mb-8 space-y-4">
+					<Title title="Explorando meu portfólio" />
 					<p>
 						Bem-vindo! Aqui, você encontrará os projetos que desenvolvi. Cada projeto reflete minha
 						dedicação e atenção aos detalhes, sempre focando em entregar experiências de usuário
@@ -30,7 +30,7 @@ import Title from '@/components/Title.astro'
 						estudos e adquiro mais conhecimentos, estarei adicionando novos projetos a esta seção.
 					</p>
 				</div>
-				<div class='grid gap-4 '>
+				<div class="grid gap-4">
 					{
 						projectData.map((projectData) => {
 							return (
@@ -39,9 +39,6 @@ import Title from '@/components/Title.astro'
 									description={projectData.description}
 									url={projectData.url}
 									stack={projectData.stack}
-									icon={projectData.icon}
-									
-									
 								/>
 							)
 						})

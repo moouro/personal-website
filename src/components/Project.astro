@@ -7,37 +7,34 @@ export interface Props {
 	url: string
 	work?: string
 	stack?: string
-	icon?: string
 }
 
-const { name, description, url, work, stack, icon } = Astro.props
+const { name, description, url, work, stack } = Astro.props
 ---
 
 <a
 	href={url}
-	target='_blank'
-	class='group flex flex-col justify-between gap-4 rounded-md border border-border bg-surface p-4'
+	target="_blank"
+	class="group flex flex-col gap-4 rounded-md border border-border bg-surface px-2 py-4"
 >
-{
-	work && (
-		<p class='flex w-fit items-center gap-2 rounded-md bg-accent/10 p-1 text-xs text-accent/80'>
-			<span class='h-2 w-2 animate-pulse rounded-full bg-accent' />
-			{work}
-		</p>
-	)
-}
-<div class='flex items-center  gap-4 transition-all group-hover:text-accent'>
+	<div class="space-y-2">
+		<div class="flex items-center justify-between">
+			<h3 class="flex font-semibold text-heading transition-all group-hover:text-accent">
+				{name}
+			</h3>
+			<Icon name="arrow" size={24} class="text-accent transition-all group-hover:-rotate-45" />
+		</div>
+		<p class="text-sm">{description}</p>
+		<p class="text-sm font-semibold">{stack}</p>
+	</div>
+
 	{
-	icon && (
-		<Icon name={icon} size={24} />
-	<h3 class='font-semibold text-heading transition-all group-hover:text-accent flex '>{name} 
-	</h3>
-	)	
+		work && (
+			<p class="flex w-fit items-center gap-2 rounded-md bg-accent/10 p-1 text-xs text-accent/80">
+				<span class="h-2 w-2 animate-pulse rounded-full bg-accent" />
+
+				{work}
+			</p>
+		)
 	}
-</div>
-	
-	<p class='text-sm'>{description}</p>
-	<p class='text-sm font-semibold text-accent'> {stack}</p>
-
-
 </a>
