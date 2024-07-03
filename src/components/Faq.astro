@@ -1,0 +1,46 @@
+---
+import Title from '@/components/Title.astro'
+---
+
+<div class="space-y-4">
+	<Title title="FAQ" />
+
+	<details
+		class="group cursor-pointer rounded-md border border-border p-4 transition-all duration-300 ease-in-out open:bg-border/20"
+	>
+		<summary class="font-semibold text-heading">Por que uso Astro?</summary>
+		<div class="overflow-hidden transition-all duration-300 ease-in-out group-open:max-h-screen">
+			<p class="mt-2">
+				Astro é uma ferramenta incrível para desenvolvimento de sites estáticos. Com Astro, é
+				possível criar sites estáticos com componentes reativos e muito mais. Além disso, Astro é
+				muito rápido e fácil de usar. Ele permite criar experiências de usuário rápidas e
+				eficientes, aproveitando o melhor de ambos os mundos: sites estáticos e aplicações
+				dinâmicas.
+			</p>
+		</div>
+	</details>
+
+	<details
+		class="group cursor-pointer rounded-md border border-border p-4 transition-all duration-300 ease-in-out open:bg-border/20"
+	>
+		<summary class="font-semibold text-heading"
+			>O que tem usado para estilizar seus projetos?</summary
+		>
+		<div class="overflow-hidden transition-all duration-300 ease-in-out group-open:max-h-screen">
+			<diqv class="space-y-4">
+				<p class="mt-2">
+					Dependendo do projeto, eu uso Tailwind CSS ou Sass para estilizar meus projetos. Tailwind
+					CSS é um framework utilitário que permite criar designs rápidos e consistentes diretamente
+					no HTML.
+				</p>
+				<p>
+					Sass é um pré-processador CSS que permite escrever estilos mais eficientes e
+					reutilizáveis. Com Sass, posso usar variáveis, funções e mixins para criar estilos mais
+					dinâmicos e modulares.
+				</p>
+			</diqv>
+		</div>
+	</details>
+</div>
+
+<script></script>
