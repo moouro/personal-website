@@ -1,17 +1,16 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import AboutImage from '@/assets/about.jpg'
 import Footer from '@/components/Footer.astro'
-import Skill from '@/components/Skill.astro'
 import Title from '@/components/Title.astro'
 import Navigation from '@/components/Navigation.astro'
 import Faq from '@/components/Faq.astro'
 ---
 
 <Layout title="Sobre mim">
-	<ViewTransitions />
+	<ClientRouter />
 
 	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
 		<header>
@@ -20,15 +19,15 @@ import Faq from '@/components/Faq.astro'
 					<Navigation title="Sobre mim" />
 
 					<p class="text-lg leading-relaxed">
-						Bem-vindo! sou <span class="font-bold text-accent">Rodrigo Luiz</span>, mas pode me
-						chamar de <span class="font-bold text-accent"> Mouro</span>. Como desenvolvedor
+						Bem-vindo! sou <span class="text-accent font-bold">Rodrigo Luiz</span>, mas pode me
+						chamar de <span class="text-accent font-bold"> Mouro</span>. Como desenvolvedor
 						Frontend, estou imerso no fascinante universo tecnológico há um ano. Minha trajetória no
 						desenvolvimento web é marcada pela dedicação contínua em aprimorar minhas habilidades e
 						conhecimentos.
 					</p>
 
 					<div class="grid items-center gap-3 md:grid-cols-3">
-						<p class="md:mt-15 col-span-2 text-lg leading-relaxed">
+						<p class="col-span-2 text-lg leading-relaxed md:mt-15">
 							Desde então, não paro de me surpreender com as infinitas possibilidades que a web
 							oferece. Cada projeto é uma oportunidade de aprender algo novo e superar desafios.
 						</p>
@@ -56,35 +55,6 @@ import Faq from '@/components/Faq.astro'
 
 		<main class="mt-20">
 			<div class="container mx-auto max-w-3xl space-y-4 px-4">
-				<section class="space-y-5">
-					<Title title="Tecnologias que trabalho" />
-					<div class="flex flex-wrap gap-4">
-						<Skill
-							href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
-							name="html"
-							title="HTML"
-						/>
-						<Skill href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" name="css" title="CSS" />
-
-						<Skill href="https://sass-lang.com/documentation/" name="sass" title="SASS" />
-
-						<Skill
-							href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
-							name="js"
-							title="Javascript"
-						/>
-						<Skill href="https://astro.build/" name="astro" title="Astro Js" />
-
-						<Skill href="https://astro.build/" name="tailwindcss" title="Tailwind CSS " />
-					</div>
-					<Title title="O que estou estudando" />
-
-					<div class="flex flex-wrap gap-4">
-						<Skill href="https://react.dev/" name="react" title="React" />
-						<Skill href="https://nextjs.org/" name="next" title="Next JS" />
-					</div>
-				</section>
-
 				<section>
 					<Faq />
 				</section>

@@ -1,54 +1,98 @@
 ---
-import Title from '@/components/Title.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<article class="container mx-auto mb-4 max-w-3xl px-4">
-	<Title title="Contato" />
+<footer class="mt-14 bg-[var(--color-surface)] py-8 text-center">
+	<div class="container mx-auto max-w-3xl space-y-6 px-4">
+		<!-- Chamada para Ação -->
+		<p class="text-lg leading-relaxed text-[var(--color-heading)]">
+			Entre em contato e vamos construir algo incrível juntos!
+		</p>
 
-	<p class="mb-4">
-		Se você deseja entrar em contato comigo, pode me enviar um e-mail ou usar uma das plataformas
-		abaixo:
-	</p>
-
-	<ul class="list-none space-y-4">
-		<li class="flex items-center gap-1">
-			<Icon name="mail" />
-			<span class="font-semibold">Email:</span>
-			<a href="mailto:mourodev@gmail.com" class="ml-2 text-accent hover:underline"
-				>mourodev@gmail.com</a
-			>
-		</li>
-		<li class="flex items-center gap-1">
-			<Icon name="linkedin" />
-			<span class="font-semibold">LinkedIn:</span>
-			<a
-				href="https://www.linkedin.com/in/moouro"
-				target="_blank"
-				class="ml-2 text-accent hover:underline"
-				aria-label="Meu perfil no LinkedIn">Mouro</a
-			>
-		</li>
-		<li class="flex items-center gap-1">
-			<Icon name="github" />
-			<span class="font-semibold">GitHub:</span>
+		<!-- Links de Redes Sociais -->
+		<div class="flex items-center justify-center gap-6">
 			<a
 				href="https://github.com/moouro"
 				target="_blank"
-				class="ml-2 text-accent hover:underline"
-				aria-label="Meu perfil no GitHub">Mouro</a
+				rel="noopener noreferrer"
+				aria-label="GitHub"
 			>
-		</li>
-		<li class="flex items-center gap-1">
-			<Icon name="whatsapp" />
-			<span class="font-semibold">Whatsapp:</span>
-			<a
-				href="https://api.whatsapp.com/send?phone=5521992802319&text=Ol%C3%A1%2C%20gostaria%20de%20entrar%20em%20contato%20com%20voc%C3%AA!"
-				class="ml-2 text-accent hover:underline"
-				aria-label="Entrar em contato pelo WhatsApp"
-			>
-				Envie uma mensagem
+				<Icon
+					name="github"
+					size={24}
+					class="text-(--color-bodyLight) transition-all hover:text-[var(--color-heading)]"
+				/>
 			</a>
-		</li>
-	</ul>
-</article>
+			<a
+				href="https://www.linkedin.com/in/seu-perfil/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="LinkedIn"
+			>
+				<Icon
+					name="linkedin"
+					size={24}
+					class="text-(--color-bodyLight) transition-all hover:text-[var(--color-heading)]"
+				/>
+			</a>
+			<a
+				href="https://wa.me/5521992802319"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="WhatsApp"
+			>
+				<Icon name="whatsapp" size={24} class="transition-all hover:text-[var(--color-heading)]" />
+			</a>
+			<a
+				href="mailto:rodrigoluiz212@gmail.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="E-mail"
+			>
+				<Icon
+					name="mail"
+					size={24}
+					class="text-(--color-bodyLight) transition-all hover:text-[var(--color-heading)]"
+				/>
+			</a>
+		</div>
+
+		<!-- Navegação Rápida -->
+		<nav class="flex items-center justify-center gap-4">
+			<a
+				href="/"
+				class="text-sm text-[var(--color-bodyDark)] transition-all hover:text-[var(--color-heading)]"
+				>Início</a
+			>
+			<a
+				href="/projects"
+				class="text-sm text-[var(--color-bodyDark)] transition-all hover:text-[var(--color-heading)]"
+				>Projetos</a
+			>
+			<!-- <a
+				href="#skills"
+				class="text-sm text-[var(--color-bodyDark)] transition-all hover:text-[var(--color-heading)]"
+				>Habilidades</a
+			> -->
+		</nav>
+
+		<!-- Créditos -->
+		<p class="text-xs text-[var(--color-bodyDark)]">
+			Desenvolvido com ❤️ usando
+			<a
+				href="https://astro.build"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-[var(--color-bodyDark)] transition-all hover:text-[var(--color-heading)]"
+				>Astro</a
+			> e
+			<a
+				href="https://tailwindcss.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="text-[var(--color-bodyDark)] transition-all hover:text-[var(--color-heading)]"
+				>Tailwind CSS</a
+			>.
+		</p>
+	</div>
+</footer>

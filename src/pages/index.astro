@@ -3,35 +3,51 @@ import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
 import Project from '@/components/Project.astro'
 import Footer from '@/components/Footer.astro'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import Title from '@/components/Title.astro'
+import projectData from '@/data/projects.json'
+import Skills from '@/components/Skills.astro'
+
+// Verificar se os dados foram carregados corretamente
+console.log('Dados do JSON:', projectData)
+
+// Ordenar projetos por data (mais recentes primeiro)
+const sortedProjects = [...projectData].sort(
+	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)
+console.log('Projetos ordenados:', sortedProjects)
+
+const latestProjects = sortedProjects.slice(0, 4)
+console.log('Últimos 4 projetos:', latestProjects)
 ---
 
 <Layout title="mouro.dev">
-	<ViewTransitions />
+	<ClientRouter />
 	<div class="grid h-svh grid-rows-[auto_1fr_auto] gap-6">
 		<header>
 			<Hero />
 		</header>
-
 		<main>
 			<section class="mt-14">
 				<div class="container mx-auto max-w-3xl px-4">
 					<div class="space-y-4">
 						<Title title="Projetos" />
-
 						<div class="grid gap-4 md:grid-cols-2">
-							<Project
-								work="Em desenvolvimento"
-								name="Minimal Portfolio"
-								description="Um portfólio minimalista para desenvolvedores e designers. O projeto é open-source e pode ser utilizado por qualquer pessoa."
-								url="https://github.com/moouro/minimal-portfolio"
-								stack="Desenvolvido com Atro Build e Tailwind CSS"
-							/>
+							{
+								latestProjects.map((project) => (
+									<Project
+										name={project.name}
+										description={project.description}
+										url={project.url}
+										stack={project.stack}
+										date={project.date}
+										work={project.work}
+									/>
+								))
+							}
 						</div>
-
 						<!-- <a
-							class="flex w-fit items-center gap-4 rounded-md bg-surface px-5 py-2 text-heading font-bold transition-all duration-150 hover:bg-surface/70 hover:shadow-lg active:bg-surface/80 active:shadow-lg"
+							class="bg-surface text-heading hover:bg-surface/70 active:bg-surface/80 flex w-fit items-center gap-4 rounded-md px-5 py-2 font-bold transition-all duration-150 hover:shadow-lg active:shadow-lg"
 							href="/projects"
 						>
 							Mais projetos
@@ -39,6 +55,10 @@ import Title from '@/components/Title.astro'
 						</a> -->
 					</div>
 				</div>
+			</section>
+
+			<section class="mt-14">
+				<Skills icon="" />
 			</section>
 		</main>
 		<footer>

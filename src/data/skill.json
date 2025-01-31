@@ -1,0 +1,32 @@
+[
+  {
+    "title": "JavaScript",
+    "description": "Linguagem fundamental para desenvolvimento web. Utilizo-a por sua versatilidade e ampla adoção no ecossistema front-end.",
+    "icon": "js"
+  },
+  {
+    "title": "TypeScript",
+    "description": "Adoto o TypeScript para garantir tipagem estática e melhorar a manutenibilidade do código em projetos complexos.",
+    "icon": "typescript"
+  },
+  {
+    "title": "React",
+    "description": "Framework poderoso para construção de interfaces dinâmicas e reativas. Utilizo-o por sua eficiência e ecossistema robusto.",
+    "icon": "react"
+  },
+  {
+    "title": "Tailwind CSS",
+    "description": "Framework utilitário para estilização rápida e consistente. Prefiro-o por sua flexibilidade e produtividade.",
+    "icon": "tailwind"
+  },
+  {
+    "title": "Astro",
+    "description": "Ferramenta moderna para construção de sites rápidos e otimizados. Utilizo-a para entregar experiências performáticas.",
+    "icon": "astro"
+  },
+  {
+    "title": "Git",
+    "description": "Ferramenta essencial para controle de versão. Garante colaboração eficiente e histórico organizado nos projetos.",
+    "icon": "git"
+  }
+]

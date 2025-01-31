@@ -4,12 +4,12 @@ import Title from '@/components/Title.astro'
 import Navigation from '@/components/Navigation.astro'
 import Stack from '@/components/Stack.astro'
 import stackData from '@/data/stack.json'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
 ---
 
 <Layout title="Ferramentas">
-	<ViewTransitions />
+	<ClientRouter />
 	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
 		<header>
 			<div class="class='container mx-auto max-w-2xl px-4">

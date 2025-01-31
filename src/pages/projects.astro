@@ -3,13 +3,13 @@ import Footer from '@/components/Footer.astro'
 import Layout from '../layouts/Layout.astro'
 import Project from '@/components/Project.astro'
 import projectData from '@/data/projects.json'
-import ViewTransitions from 'astro/components/ViewTransitions.astro'
+import { ClientRouter } from 'astro:transitions'
 import Navigation from '@/components/Navigation.astro'
 import Title from '@/components/Title.astro'
 ---
 
 <Layout title="Projetos">
-	<ViewTransitions />
+	<ClientRouter />
 	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
 		<header>
 			<div class="class='container mx-auto max-w-2xl px-4">

@@ -1,8 +1,10 @@
 [
 	{
+		"work": "Em Destaque",
 		"name": "Meu site pessoal",
 		"description": "Minha página pessoal com informações sobre mim.",
 		"url": "https://github.com/moouro/personal-website",
-		"stack": "Desenvolvido com Atro Build e Tailwind CSS."
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-01"
 	}
 ]

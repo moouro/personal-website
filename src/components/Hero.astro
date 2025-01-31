@@ -1,60 +1,107 @@
 ---
 import { Image } from 'astro:assets'
 import Profile from '@/assets/profile.png'
+import { Icon } from 'astro-icon/components'
 ---
 
 <nav class="container mx-auto mt-10 max-w-3xl px-4">
-	<div class="space-y-4">
+	<div class="space-y-6">
 		<Image
 			src={Profile}
 			width="150"
-			alt="foto de perfil do Mouro"
-			class="rounded-full"
+			alt="Foto de perfil de Mouro, desenvolvedor front-end especializado em JavaScript e TypeScript"
+			class="w-36 rounded-full md:w-40"
 			format="avif"
 			loading={'eager'}
 		/>
-		<h1 class="text-xl font-bold text-heading md:text-3xl">
-			Olá, sou o <span class="js-name text-accent">Mouro</span>
+		<h1 class="text-heading text-xl font-bold md:text-3xl">
+			Olá, sou o <span class="text-accent">Mouro</span>
 		</h1>
 		<p class="text-lg leading-relaxed">
-			Sou um desenvolvedor front-end, moro no Rio de Janeiro, estou focado em <span
-				class="font-semibold text-accent">JavaScript</span
-			> e <span class="font-semibold text-accent">TypeScript</span>. Utilizo <span
-				class="font-semibold text-accent">React</span
-			>, <span class="font-semibold text-accent">Astro</span>, <span
-				class="font-semibold text-accent">Tailwind CSS</span
-			>, <span class="font-semibold text-accent">Sass</span> e <span
-				class="font-semibold text-accent">Vite.js</span
-			> para criar interfaces modernas e responsivas. Estou sempre aprendendo e aplicando as melhores
-			práticas em desenvolvimento web.
+			Sou um desenvolvedor front-end do Rio de Janeiro, focado em criar interfaces modernas e
+			responsivas. Minhas principais tecnologias incluem:
 		</p>
-
+		<div class="flex flex-wrap gap-2">
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>JavaScript</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>TypeScript</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>React</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>Astro</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>Tailwind CSS</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>Sass</span
+			>
+			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
+				>Vite.js</span
+			>
+		</div>
 		<p class="text-lg leading-relaxed">
 			Tenho experiência prática com projetos pessoais, nos quais desenvolvi diversas aplicações web
-			interativas utilizando <span class="font-semibold text-accent">Astro</span> e <span
-				class="font-semibold text-accent">Tailwind CSS</span
-			>. Meu compromisso com o aprendizado contínuo me permite acompanhar as últimas tendências do
-			setor.
+			interativas. Meu compromisso com o aprendizado contínuo me permite acompanhar as últimas
+			tendências do setor.
 		</p>
+		<p class="text-accent text-lg leading-relaxed font-semibold">
+			Vamos criar algo incrível juntos?
+		</p>
+		<div class="flex items-center gap-4">
+			<a
+				href="/about"
+				class="bg-accent hover:bg-accent/60 focus:ring-accent/40 focus:ring-opacity-75 flex w-fit items-center gap-2 rounded px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out focus:ring-2 focus:outline-none"
+				aria-label="Sobre mim"
+			>
+				Sobre mim
+				<Icon name="about" size={20} />
+			</a>
+			<div class="flex gap-2">
+				<a
+					href="https://wa.me/5521992802319"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Entre em contato via WhatsApp"
+				>
+					<Icon name="whatsapp" size={25} />
+					<span class="sr-only">Entre em contato via WhatsApp</span>
+				</a>
 
-		<p class="text-lg font-semibold leading-relaxed text-accent">Vamos criar algo juntos?</p>
-		<a
-			href="/about"
-			class="flex w-fit items-center rounded bg-accent px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out hover:bg-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-opacity-75"
-			aria-label="Sobre mim"
-		>
-			Sobre mim
-		</a>
+				<a
+					href="https://github.com/moouro"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Meu perfil no GitHub"
+				>
+					<Icon name="github" size={25} />
+					<span class="sr-only"> Meu perfil no GitHub </span>
+				</a>
+
+				<a
+					href="https://x.com/moouro"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Meu perfil no X"
+				>
+					<Icon name="twitter" size={25} />
+					<span class="sr-only"> Meu perfil no X </span>
+				</a>
+
+				<a
+					href="https://www.instagram.com/moouro"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Meu perfil no Instagram"
+				>
+					<Icon name="instagram" size={25} />
+					<span class="sr-only"> Meu perfil no Instagram</span>
+				</a>
+			</div>
+		</div>
 	</div>
 </nav>
-
-<!-- <script>
-	import Typed from 'typed.js'
-
-	const typed = new Typed('.js-name', {
-		strings: ['Desenvolvedor Frontend.', 'moro no Rio de Janeiro.'],
-		typeSpeed: 50,
-		backSpeed: 60,
-		loop: true
-	})
-</script> -->

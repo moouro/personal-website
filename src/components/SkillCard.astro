@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components'
+// Props recebidas pelo componente
+interface Props {
+	title: string
+	description: string
+	icon: string // Nome do ícone a ser exibido
+}
+
+const { title, description, icon } = Astro.props
+---
+
+<div class="bg-surface flex items-start gap-4 rounded-md px-2 py-8 shadow-sm">
+	<Icon name={icon} size={30} class="text-accent flex-shrink-0" />
+	<div class="space-y-2">
+		<h4 class="text-heading font-semibold">{title}</h4>
+		<p class="text-sm leading-relaxed">{description}</p>
+	</div>
+</div>
