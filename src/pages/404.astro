@@ -1,23 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
 ---
 
 <Layout title="Página não encontrada">
-	<ViewTransitions />
+	<ClientRouter />
 	<div class="grid h-svh items-center justify-center">
 		<main class="grid grid-rows-2 place-items-center px-6 py-24 sm:py-32 lg:px-8">
 			<div class="text-center">
-				<p class="font-bold text-accent">404</p>
-				<h1 class="mt-4 text-3xl font-bold tracking-tight text-heading sm:text-5xl">
+				<p class="text-accent font-bold">404</p>
+				<h1 class="text-heading mt-4 text-3xl font-bold tracking-tight sm:text-5xl">
 					Página não encontrada
 				</h1>
 				<p class="mt-6 leading-7">Lamento, mas não consegui encontrar a página que procura.</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a
 						href="/"
-						class="flex w-fit items-center rounded bg-accent px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out hover:bg-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-opacity-75"
+						class="bg-accent hover:bg-accent/60 focus:ring-accent/40 focus:ring-opacity-75 flex w-fit items-center rounded px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out focus:ring-2 focus:outline-none"
 						aria-label="Ir para página inicial"
 					>
 						Ir para página inicial
@@ -25,7 +25,8 @@ import Footer from '@/components/Footer.astro'
 				</div>
 			</div>
 		</main>
-
-		<Footer />
 	</div>
+	<footer>
+		<Footer />
+	</footer>
 </Layout>
