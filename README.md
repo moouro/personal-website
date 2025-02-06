@@ -2,7 +2,7 @@
 
 > 🧑‍🚀 **mouro.dev** Seja bem-vindo!
 
-![Imagem do site mouro.dev](src/assets/screen.png)
+![Imagem do site mouro.dev](src/assets/site.png)
 
 ## 🚀 Estrutura do Projeto
 
