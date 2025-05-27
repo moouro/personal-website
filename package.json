@@ -14,14 +14,14 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@tailwindcss/vite": "^4.1.6",
-		"astro": "^5.7.13",
+		"@tailwindcss/vite": "^4.1.7",
+		"astro": "^5.8.0",
 		"astro-icon": "^1.1.5",
 		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
-		"sharp": "^0.34.1",
-		"tailwindcss": "^4.1.6",
+		"sharp": "^0.34.2",
+		"tailwindcss": "^4.1.7",
 		"typescript": "^5.8.3"
 	},
 	"devDependencies": {

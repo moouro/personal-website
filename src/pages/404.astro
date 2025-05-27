@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import { ClientRouter } from 'astro:transitions'
 import Footer from '@/components/Footer.astro'
+import Menu from '@/components/Menu.astro'
 ---
 
 <Layout title="Página não encontrada">
 	<ClientRouter />
 	<div class="grid h-svh items-center justify-center">
+		<Menu />
 		<main class="grid grid-rows-2 place-items-center px-6 py-24 sm:py-32 lg:px-8">
 			<div class="text-center">
 				<p class="text-accent font-bold">404</p>
