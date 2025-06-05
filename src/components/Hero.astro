@@ -6,7 +6,34 @@ import Menu from '@/components/Menu.astro'
 ---
 
 <nav class="container mx-auto mt-10 max-w-3xl px-4">
-	<div class="space-y-6">
-		<Menu />
-	</div>
+	<Menu />
 </nav>
+
+<!-- Hero Section -->
+<main class="container mx-auto max-w-3xl px-4">
+	<section class="py-16 md:py-24">
+		<div class="space-y-8">
+			<!-- Main Heading -->
+			<h1 class="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">Olá, sou o Mouro.</h1>
+
+			<!-- Description -->
+			<div class="space-y-6 text-lg leading-relaxed text-zinc-300 md:text-xl">
+				<p>
+					Sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis,
+					morando no Rio de Janeiro. Este é meu espaço pessoal na Internet onde compartilho meus
+					projetos e ideias.
+				</p>
+				<p>
+					Sempre buscando aprimorar minhas habilidades e explorar novas tecnologias para desenvolver
+					soluções criativas e funcionais. Confira minha página
+					<a
+						href="/about"
+						class="text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+						>sobre</a
+					>
+					para saber mais sobre mim.
+				</p>
+			</div>
+		</div>
+	</section>
+</main>

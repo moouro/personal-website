@@ -1,14 +1,14 @@
 [
-	{
-		"href": "/",
-		"label": "Home"
-	},
-	{
-		"href": "/projects",
-		"label": "Projetos"
-	},
-	{
-		"href": "/about",
-		"label": "Sobre"
-	}
+  {
+    "href": "/",
+    "label": "Home"
+  },
+  {
+    "href": "/projects",
+    "label": "Projetos"
+  },
+  {
+    "href": "/about",
+    "label": "Sobre"
+  }
 ]

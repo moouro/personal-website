@@ -54,7 +54,7 @@ const navigationItems: NavigationItem[] = [
 
 	<ul
 		id="menu"
-		class="menu-transition hidden w-full flex-col rounded-3xl bg-zinc-800 p-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
+		class="mobile-menu hidden w-full flex-col rounded-3xl bg-zinc-800 p-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
 		aria-labelledby="menu-btn"
 	>
 		{
@@ -69,115 +69,113 @@ const navigationItems: NavigationItem[] = [
 	</ul>
 </div>
 
-<script type="module">
-	// Variáveis globais para controlar event listeners
-	let currentMenuController = null
-
-	function createMenuController() {
+<script>
+	// Aguardar o DOM estar pronto
+	function initMenu() {
 		const menuBtn = document.getElementById('menu-btn')
 		const menu = document.getElementById('menu')
-
+		
+		// Verificar se elementos existem
 		if (!menuBtn || !menu) {
-			return null
+			console.warn('Menu elements not found')
+			return
 		}
 
 		const hamburgerIcon = menuBtn.querySelector('svg:first-child')
 		const closeIcon = menuBtn.querySelector('svg:last-child')
+		
+		// State management
+		let isOpen = false
 
-		// Função unificada para controlar o estado do menu
-		function toggleMenu(isOpen = null) {
-			const shouldOpen = isOpen ?? menuBtn.getAttribute('aria-expanded') !== 'true'
-
-			menuBtn.setAttribute('aria-expanded', shouldOpen)
-			menu.classList.toggle('hidden', !shouldOpen)
-			menu.classList.toggle('flex', shouldOpen)
-
-			// Adiciona animação quando o menu abre
-			if (shouldOpen) {
-				menu.classList.add('menu-fade-in')
-				// Remove a classe após a animação
-				setTimeout(() => menu.classList.remove('menu-fade-in'), 200)
-			}
-
-			if (hamburgerIcon && closeIcon) {
-				hamburgerIcon.classList.toggle('hidden', shouldOpen)
-				closeIcon.classList.toggle('hidden', !shouldOpen)
-			}
-		}
-
-		// Event handlers
-		const handleMenuClick = () => toggleMenu()
-
-		const handleKeydown = (event) => {
-			if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
-				toggleMenu(false)
+		function updateUI() {
+			// Double check elementos ainda existem
+			if (!menuBtn || !menu) return
+			
+			if (isOpen) {
+				menu.classList.remove('hidden')
+				menu.classList.add('flex')
+				hamburgerIcon?.classList.add('hidden')
+				closeIcon?.classList.remove('hidden')
+				menuBtn.setAttribute('aria-expanded', 'true')
+			} else {
+				menu.classList.add('hidden')
+				menu.classList.remove('flex')
+				hamburgerIcon?.classList.remove('hidden')
+				closeIcon?.classList.add('hidden')
+				menuBtn.setAttribute('aria-expanded', 'false')
 			}
 		}
 
-		const handleClickOutside = (event) => {
-			if (
-				window.innerWidth < 768 &&
-				!menuBtn.contains(event.target) &&
-				!menu.contains(event.target) &&
-				!menu.classList.contains('hidden')
-			) {
-				toggleMenu(false)
+		function toggleMenu() {
+			isOpen = !isOpen
+			updateUI()
+		}
+
+		function closeMenu() {
+			isOpen = false
+			updateUI()
+		}
+
+		// Event listeners
+		menuBtn.addEventListener('click', (e) => {
+			e.stopPropagation()
+			toggleMenu()
+		})
+
+		// Close on outside click (mobile only)
+		document.addEventListener('click', (e) => {
+			if (!menuBtn || !menu) return
+			
+			const target = e.target as Node
+			if (window.innerWidth < 768 && isOpen && 
+				!menu.contains(target) && !menuBtn.contains(target)) {
+				closeMenu()
 			}
-		}
+		})
 
-		const handleResize = () => {
-			if (window.innerWidth >= 768 && !menu.classList.contains('hidden')) {
-				toggleMenu(false)
+		// Close on escape
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && isOpen) {
+				closeMenu()
 			}
-		}
+		})
 
-		const handleBeforeNavigation = () => {
-			if (window.innerWidth < 768 && !menu.classList.contains('hidden')) {
-				toggleMenu(false)
+		// Handle resize
+		window.addEventListener('resize', () => {
+			if (!menu) return
+			
+			if (window.innerWidth >= 768) {
+				// Desktop - always show
+				menu.classList.remove('hidden')
+				menu.classList.add('flex')
+			} else {
+				// Mobile - close if open
+				if (isOpen) {
+					closeMenu()
+				} else {
+					updateUI()
+				}
 			}
+		})
+
+		// Initial state
+		if (window.innerWidth >= 768) {
+			menu.classList.remove('hidden')
+			menu.classList.add('flex')
+		} else {
+			updateUI()
 		}
 
-		// Adicionar event listeners
-		menuBtn.addEventListener('click', handleMenuClick)
-		document.addEventListener('keydown', handleKeydown)
-		document.addEventListener('click', handleClickOutside)
-		window.addEventListener('resize', handleResize)
-		document.addEventListener('astro:before-preparation', handleBeforeNavigation)
-
-		// Inicializar estado correto
-		const isMenuVisible = !menu.classList.contains('hidden')
-		if (isMenuVisible && window.innerWidth < 768) {
-			toggleMenu(true)
-		} else if (window.innerWidth < 768) {
-			toggleMenu(false)
-		}
-
-		// Retorna funções de controle
-		return {
-			destroy() {
-				menuBtn.removeEventListener('click', handleMenuClick)
-				document.removeEventListener('keydown', handleKeydown)
-				document.removeEventListener('click', handleClickOutside)
-				window.removeEventListener('resize', handleResize)
-				document.removeEventListener('astro:before-preparation', handleBeforeNavigation)
-			},
-			toggleMenu
-		}
+		console.log('Menu mobile inicializado')
 	}
 
-	function setupMenu() {
-		// Cleanup do controller anterior
-		if (currentMenuController) {
-			currentMenuController.destroy()
-		}
-
-		// Criar novo controller
-		currentMenuController = createMenuController()
+	// Initialize on DOM ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initMenu)
+	} else {
+		initMenu()
 	}
 
-	// Executa a configuração do menu no carregamento inicial da página
-	setupMenu()
-
-	// Executa a configuração do menu após cada navegação de página do Astro
-	document.addEventListener('astro:page-load', setupMenu)
+	// Reinitialize on Astro page loads
+	document.addEventListener('astro:page-load', initMenu)
 </script>

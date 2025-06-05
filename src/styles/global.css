@@ -1,23 +1,63 @@
 @import 'tailwindcss';
 
-/* Melhorias para o componente Menu */
+/* Configurações globais de tipografia */
+@layer base {
+	html {
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			Roboto,
+			'Helvetica Neue',
+			Arial,
+			sans-serif;
+		line-height: 1.6;
+	}
+
+	/* Melhor spacing para textos */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1.2;
+		font-weight: 600;
+	}
+
+	/* Links com melhor acessibilidade */
+	a {
+		text-decoration-thickness: 1px;
+		text-underline-offset: 2px;
+	}
+
+	/* Seleção de texto personalizada */
+	::selection {
+		background-color: rgba(20, 184, 166, 0.2);
+		color: rgb(20, 184, 166);
+	}
+}
+
+/* Melhorias para componentes */
 @layer components {
+	/* Transições suaves para o menu */
 	.menu-transition {
 		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	}
-	
+
 	.menu-fade-in {
 		animation: fadeIn 0.3s ease-out;
 	}
-	
+
 	@keyframes fadeIn {
-		from { 
-			opacity: 0; 
-			transform: translateY(-8px); 
+		from {
+			opacity: 0;
+			transform: translateY(-8px);
 		}
-		to { 
-			opacity: 1; 
-			transform: translateY(0); 
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 
@@ -30,11 +70,61 @@
 
 	/* Transições suaves para os ícones */
 	.menu-icon {
-		transition: transform 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
 	}
 
 	/* Hover effect no botão do menu */
 	#menu-btn:hover .menu-icon {
 		transform: scale(1.1);
+	}
+
+	/* Estilos específicos para menu mobile */
+	.mobile-menu {
+		transition: all 0.3s ease-in-out;
+		transform-origin: top;
+	}
+
+	.mobile-menu.hidden {
+		opacity: 0;
+		transform: scaleY(0);
+		max-height: 0;
+		pointer-events: none;
+	}
+
+	.mobile-menu:not(.hidden) {
+		opacity: 1;
+		transform: scaleY(1);
+		max-height: 500px;
+		pointer-events: auto;
+	}
+
+	/* Animações suaves para links */
+	a {
+		transition: color 0.2s ease-in-out;
+	}
+
+	/* Utility class para truncar texto em 3 linhas */
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	/* Melhor visual para os cards de projeto */
+	.project-card {
+		backdrop-filter: blur(10px);
+		background: rgba(39, 39, 42, 0.8);
+	}
+
+	/* Estilos para artigos */
+	article {
+		border-bottom: 1px solid rgba(113, 113, 122, 0.1);
+		padding-bottom: 1.5rem;
+	}
+
+	article:last-child {
+		border-bottom: none;
 	}
 }
