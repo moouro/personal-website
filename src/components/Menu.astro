@@ -1,5 +1,16 @@
 ---
 import Link from './Link.astro'
+
+interface NavigationItem {
+	href: string
+	label: string
+}
+
+const navigationItems: NavigationItem[] = [
+	{ href: '/', label: 'Home' },
+	{ href: '/projects', label: 'Projetos' },
+	{ href: '/about', label: 'Sobre' }
+]
 ---
 
 <div class="w-full md:flex md:items-center md:justify-between">
@@ -9,10 +20,10 @@ import Link from './Link.astro'
 			aria-label="Abrir menu"
 			aria-expanded="false"
 			aria-controls="menu"
-			class="text-gray-800 focus:outline-none"
+			class="cursor-pointer focus:outline-none"
 		>
 			<svg
-				class="pointer-events-none h-6 w-6"
+				class="menu-icon pointer-events-none h-6 w-6"
 				fill="none"
 				stroke="currentColor"
 				viewBox="0 0 24 24"
@@ -26,7 +37,7 @@ import Link from './Link.astro'
 			</svg>
 
 			<svg
-				class="pointer-events-none hidden h-6 w-6"
+				class="menu-icon pointer-events-none hidden h-6 w-6"
 				fill="none"
 				stroke="currentColor"
 				viewBox="0 0 24 24"
@@ -43,76 +54,125 @@ import Link from './Link.astro'
 
 	<ul
 		id="menu"
-		class="hidden w-full flex-col rounded-full bg-zinc-800 p-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4 md:rounded-none"
+		class="menu-transition hidden w-full flex-col rounded-3xl bg-zinc-800 p-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
 		aria-labelledby="menu-btn"
 	>
-		<li>
-			<Link href="/" class="block py-2 text-sm hover:text-teal-500 md:py-0"> Home </Link>
-		</li>
-
-		<li>
-			<Link href="/projects" class="block py-2 text-sm hover:text-teal-500 md:py-0">
-				Projetos
-			</Link>
-		</li>
-
-		<li>
-			<Link href="/about" class="block py-2 text-sm hover:text-teal-500 md:py-0"> Sobre </Link>
-		</li>
+		{
+			navigationItems.map((item: NavigationItem) => (
+				<li>
+					<Link href={item.href} class="block py-2 text-sm hover:text-teal-500 md:py-0">
+						{item.label}
+					</Link>
+				</li>
+			))
+		}
 	</ul>
 </div>
 
 <script type="module">
-	const menuBtn = document.getElementById('menu-btn')
-	const menu = document.getElementById('menu')
+	// Variáveis globais para controlar event listeners
+	let currentMenuController = null
 
-	if (menuBtn && menu) {
-		menuBtn.addEventListener('click', () => {
-			menu.classList.toggle('hidden')
-			menu.classList.toggle('flex')
-		})
-	}
-
-	function setupMenu() {
+	function createMenuController() {
 		const menuBtn = document.getElementById('menu-btn')
 		const menu = document.getElementById('menu')
 
 		if (!menuBtn || !menu) {
-			return
+			return null
 		}
 
 		const hamburgerIcon = menuBtn.querySelector('svg:first-child')
 		const closeIcon = menuBtn.querySelector('svg:last-child')
 
-		menuBtn.addEventListener('click', () => {
-			const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true' || false
-			menuBtn.setAttribute('aria-expanded', !isExpanded)
-			menu.classList.toggle('hidden')
-			menu.classList.toggle('flex') // Garante que 'flex' seja aplicado quando visível para 'flex-col' funcionar
+		// Função unificada para controlar o estado do menu
+		function toggleMenu(isOpen = null) {
+			const shouldOpen = isOpen ?? menuBtn.getAttribute('aria-expanded') !== 'true'
+
+			menuBtn.setAttribute('aria-expanded', shouldOpen)
+			menu.classList.toggle('hidden', !shouldOpen)
+			menu.classList.toggle('flex', shouldOpen)
+
+			// Adiciona animação quando o menu abre
+			if (shouldOpen) {
+				menu.classList.add('menu-fade-in')
+				// Remove a classe após a animação
+				setTimeout(() => menu.classList.remove('menu-fade-in'), 200)
+			}
 
 			if (hamburgerIcon && closeIcon) {
-				hamburgerIcon.classList.toggle('hidden')
-				closeIcon.classList.toggle('hidden')
-			}
-		})
-
-		// Garante que o menu esteja no estado correto ao carregar a página (ex: se o usuário navegar com o menu aberto)
-		// No entanto, para navegações SPA, geralmente queremos que o menu comece fechado.
-		// Se o menu estiver visível (não 'hidden') e for mobile, o botão deve refletir isso.
-		const isMenuVisible = !menu.classList.contains('hidden')
-		if (isMenuVisible && window.innerWidth < 768) {
-			menuBtn.setAttribute('aria-expanded', 'true')
-			if (hamburgerIcon && closeIcon) {
-				hamburgerIcon.classList.add('hidden')
-				closeIcon.classList.remove('hidden')
-			}
-		} else if (window.innerWidth < 768) {
-			menuBtn.setAttribute('aria-expanded', 'false')
-			if (hamburgerIcon && closeIcon) {
-				hamburgerIcon.classList.remove('hidden')
-				closeIcon.classList.add('hidden')
+				hamburgerIcon.classList.toggle('hidden', shouldOpen)
+				closeIcon.classList.toggle('hidden', !shouldOpen)
 			}
 		}
+
+		// Event handlers
+		const handleMenuClick = () => toggleMenu()
+
+		const handleKeydown = (event) => {
+			if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+				toggleMenu(false)
+			}
+		}
+
+		const handleClickOutside = (event) => {
+			if (
+				window.innerWidth < 768 &&
+				!menuBtn.contains(event.target) &&
+				!menu.contains(event.target) &&
+				!menu.classList.contains('hidden')
+			) {
+				toggleMenu(false)
+			}
+		}
+
+		const handleResize = () => {
+			if (window.innerWidth >= 768 && !menu.classList.contains('hidden')) {
+				toggleMenu(false)
+			}
+		}
+
+		const handleBeforeNavigation = () => {
+			if (window.innerWidth < 768 && !menu.classList.contains('hidden')) {
+				toggleMenu(false)
+			}
+		}
+
+		// Adicionar event listeners
+		menuBtn.addEventListener('click', handleMenuClick)
+		document.addEventListener('keydown', handleKeydown)
+		document.addEventListener('click', handleClickOutside)
+		window.addEventListener('resize', handleResize)
+		document.addEventListener('astro:before-preparation', handleBeforeNavigation)
+
+		// Inicializar estado correto
+		const isMenuVisible = !menu.classList.contains('hidden')
+		if (isMenuVisible && window.innerWidth < 768) {
+			toggleMenu(true)
+		} else if (window.innerWidth < 768) {
+			toggleMenu(false)
+		}
+
+		// Retorna funções de controle
+		return {
+			destroy() {
+				menuBtn.removeEventListener('click', handleMenuClick)
+				document.removeEventListener('keydown', handleKeydown)
+				document.removeEventListener('click', handleClickOutside)
+				window.removeEventListener('resize', handleResize)
+				document.removeEventListener('astro:before-preparation', handleBeforeNavigation)
+			},
+			toggleMenu
+		}
+	}
+
+	function setupMenu() {
+		// Cleanup do controller anterior
+		if (currentMenuController) {
+			currentMenuController.destroy()
+		}
+
+		// Criar novo controller
+		currentMenuController = createMenuController()
 	}
 
 	// Executa a configuração do menu no carregamento inicial da página

@@ -1,1 +1,40 @@
 @import 'tailwindcss';
+
+/* Melhorias para o componente Menu */
+@layer components {
+	.menu-transition {
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	.menu-fade-in {
+		animation: fadeIn 0.3s ease-out;
+	}
+	
+	@keyframes fadeIn {
+		from { 
+			opacity: 0; 
+			transform: translateY(-8px); 
+		}
+		to { 
+			opacity: 1; 
+			transform: translateY(0); 
+		}
+	}
+
+	/* Melhor foco para acessibilidade */
+	button:focus-visible {
+		outline: 2px solid theme('colors.teal.500');
+		outline-offset: 2px;
+		border-radius: 4px;
+	}
+
+	/* Transições suaves para os ícones */
+	.menu-icon {
+		transition: transform 0.2s ease-in-out;
+	}
+
+	/* Hover effect no botão do menu */
+	#menu-btn:hover .menu-icon {
+		transform: scale(1.1);
+	}
+}

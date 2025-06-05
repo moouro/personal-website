@@ -1,9 +1,11 @@
 ---
-export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+export interface LinkProps extends astroHTML.JSX.AnchorHTMLAttributes {}
 
 const { href, class: className, ...props } = Astro.props
 
 const path = Astro.url.pathname.replace(/\/$/, '')
+
+const isExternal = href?.startsWith('http') || href?.startsWith('mailto:')
 
 const isHome = href === '/' && path === ''
 
@@ -12,10 +14,14 @@ const isOtherPages =
 		? path.substring(1).startsWith(href.substring(1))
 		: false
 
-const isActive = isHome || isOtherPages
+const isActive =
+	href === '/' ? path === '' || path === '/' : path === href || path.startsWith(href + '/')
 ---
 
 <!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. -->
-<a href={href} class:list={[className, isActive ? 'text-teal-500' : 'border-b-0']} {...props}
-	><slot /></a
+<a
+	href={href}
+	aria-current={isActive ? 'page' : undefined}
+	class:list={[className, isActive ? 'text-teal-500' : 'border-b-0']}
+	{...props}><slot /></a
 >
