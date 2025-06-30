@@ -1,25 +1,37 @@
 {
 	"name": "personal-portfolio",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro check && astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"check": "astro check"
+		"check": "astro check",
+		"release": "standard-version",
+		"commit": "cz"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@tailwindcss/vite": "^4.0.3",
-		"astro": "^5.2.5",
+		"@tailwindcss/vite": "^4.1.7",
+		"astro": "^5.8.0",
 		"astro-icon": "^1.1.5",
-		"prettier": "^3.4.2",
+		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11",
-		"sharp": "^0.33.5",
-		"tailwindcss": "^4.0.3",
-		"typescript": "^5.7.3"
+		"sharp": "^0.34.2",
+		"tailwindcss": "^4.1.7",
+		"typescript": "^5.8.3"
+	},
+	"devDependencies": {
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"standard-version": "^9.5.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
 	}
 }

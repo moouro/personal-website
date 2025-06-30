@@ -1,7 +1,47 @@
 [
 	{
-		"work": "Em Destaque",
+		"work": "Em Desenvolvimento",
 		"name": "Meu site pessoal",
+		"description": "Minha página pessoal com informações sobre mim.",
+		"url": "https://github.com/moouro/personal-website",
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-04"
+	},
+	{
+		"work": "",
+		"name": "Meu site pessoal 01",
+		"description": "Minha página pessoal com informações sobre mim.",
+		"url": "https://github.com/moouro/personal-website",
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-03"
+	},
+	{
+		"work": "",
+		"name": "Meu site pessoal 02",
+		"description": "Minha página pessoal com informações sobre mim.",
+		"url": "https://github.com/moouro/personal-website",
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-01"
+	},
+	{
+		"work": "",
+		"name": "Meu site pessoal 03",
+		"description": "Minha página pessoal com informações sobre mim.",
+		"url": "https://github.com/moouro/personal-website",
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-01"
+	},
+	{
+		"work": "",
+		"name": "Meu site pessoal 04",
+		"description": "Minha página pessoal com informações sobre mim.",
+		"url": "https://github.com/moouro/personal-website",
+		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",
+		"date": "2024-02-01"
+	},
+	{
+		"work": "",
+		"name": "Meu site pessoal 04",
 		"description": "Minha página pessoal com informações sobre mim.",
 		"url": "https://github.com/moouro/personal-website",
 		"stack": "Desenvolvido com Atro Build e Tailwind CSS.",

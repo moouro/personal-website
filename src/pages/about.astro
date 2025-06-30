@@ -3,66 +3,146 @@ import { ClientRouter } from 'astro:transitions'
 import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import AboutImage from '@/assets/about.jpg'
-import Footer from '@/components/Footer.astro'
-import Title from '@/components/Title.astro'
-import Navigation from '@/components/Navigation.astro'
-import Faq from '@/components/Faq.astro'
+import Menu from '@/components/Menu.astro'
 ---
 
-<Layout title="Sobre mim">
+<Layout title="Sobre - mouro.dev">
 	<ClientRouter />
+	<div class="min-h-screen bg-zinc-900">
+		<!-- Navigation -->
+		<nav class="container mx-auto mt-10 max-w-3xl px-4">
+			<div class="space-y-6">
+				<Menu />
+			</div>
+		</nav>
 
-	<div class="mt-10 grid h-svh grid-rows-[auto_1fr_auto] gap-4">
-		<header>
-			<div class="container mx-auto max-w-3xl space-y-4 px-4">
-				<div class="space-y-3">
-					<Navigation title="Sobre mim" />
+		<!-- Main Content -->
+		<main class="container mx-auto max-w-3xl px-4 pb-16">
+			<!-- Page Header -->
+			<header class="mb-16">
+				<h1 class="mb-6 text-4xl font-bold md:text-5xl">Sobre mim</h1>
+			</header>
 
-					<p class="text-lg leading-relaxed">
-						Bem-vindo! sou <span class="text-accent font-bold">Rodrigo Luiz</span>, mas pode me
-						chamar de <span class="text-accent font-bold"> Mouro</span>. Como desenvolvedor
-						Frontend, estou imerso no fascinante universo tecnológico há um ano. Minha trajetória no
-						desenvolvimento web é marcada pela dedicação contínua em aprimorar minhas habilidades e
-						conhecimentos.
-					</p>
+			<!-- About Content -->
+			<div class="space-y-12">
+				<!-- Introduction -->
+				<section class="grid items-start gap-8 md:grid-cols-3">
+					<div class="space-y-6 md:col-span-2">
+						<div class="space-y-6 text-lg leading-relaxed text-zinc-300">
+							<p>
+								Bem-vindo! Sou <strong class="text-teal-400">Rodrigo Luiz</strong>, mas pode me
+								chamar de <strong class="text-teal-400">Mouro</strong>. Como desenvolvedor
+								front-end, estou imerso no fascinante universo tecnológico há um ano.
+							</p>
 
-					<div class="grid items-center gap-3 md:grid-cols-3">
-						<p class="col-span-2 text-lg leading-relaxed md:mt-15">
-							Desde então, não paro de me surpreender com as infinitas possibilidades que a web
-							oferece. Cada projeto é uma oportunidade de aprender algo novo e superar desafios.
-						</p>
+							<p>
+								Minha trajetória no desenvolvimento web é marcada pela dedicação contínua em
+								aprimorar minhas habilidades e conhecimentos. Desde então, não paro de me
+								surpreender com as infinitas possibilidades que a web oferece.
+							</p>
 
-						<figure>
+							<p>
+								Cada projeto é uma oportunidade de aprender algo novo e superar desafios, sempre
+								buscando criar experiências digitais que façam a diferença.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex justify-center md:justify-end">
+						<figure class="max-w-xs">
 							<Image
 								src={AboutImage}
-								width="200"
-								alt="foto de perfil do  mouro"
-								class="rounded-md"
+								width="300"
+								alt="Foto de perfil do Mouro"
+								class="rounded-lg"
 								format="avif"
 								loading={'eager'}
 							/>
 						</figure>
 					</div>
-					<Title title="Objetivo Profissional" />
-					<p class="text-lg leading-relaxed">
-						Estou em busca da minha primeira oportunidade profissional como desenvolvedor front-end,
-						onde possa contribuir com minhas habilidades e continuar a crescer na área de
-						desenvolvimento web.
-					</p>
-				</div>
-			</div>
-		</header>
+				</section>
 
-		<main class="mt-20">
-			<div class="container mx-auto max-w-3xl space-y-4 px-4">
-				<section>
-					<Faq />
+				<!-- Professional Goal -->
+				<section class="space-y-6">
+					<h2 class="text-2xl font-semibold md:text-3xl">Objetivo Profissional</h2>
+					<div class="space-y-4 text-lg leading-relaxed text-zinc-300">
+						<p>
+							Estou em busca da minha primeira oportunidade profissional como desenvolvedor
+							front-end, onde possa contribuir com minhas habilidades e continuar a crescer na área
+							de desenvolvimento web.
+						</p>
+						<p>
+							Tenho paixão por criar interfaces intuitivas e experiências de usuário excepcionais,
+							sempre mantendo o foco na performance e acessibilidade.
+						</p>
+					</div>
+				</section>
+
+				<!-- Skills & Technologies -->
+				<section class="space-y-6">
+					<h2 class="text-2xl font-semibold md:text-3xl">Tecnologias & Habilidades</h2>
+					<div class="grid gap-8 md:grid-cols-2">
+						<div class="space-y-4">
+							<h3 class="text-xl font-medium text-teal-400">Front-end</h3>
+							<ul class="space-y-2 text-zinc-300">
+								<li>• HTML5, CSS3, JavaScript (ES6+)</li>
+								<li>• React, Next.js</li>
+								<li>• Astro, TypeScript</li>
+								<li>• Tailwind CSS, Sass</li>
+								<li>• Responsive Design</li>
+							</ul>
+						</div>
+
+						<div class="space-y-4">
+							<h3 class="text-xl font-medium text-teal-400">Ferramentas & Outros</h3>
+							<ul class="space-y-2 text-zinc-300">
+								<li>• Git, GitHub</li>
+								<li>• VS Code, Figma</li>
+								<li>• npm, pnpm</li>
+								<li>• Vite, Webpack</li>
+								<li>• Web Accessibility (a11y)</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Contact -->
+				<section class="space-y-6">
+					<h2 class="text-2xl font-semibold md:text-3xl">Vamos Conversar?</h2>
+					<div class="space-y-4 text-lg leading-relaxed text-zinc-300">
+						<p>
+							Estou sempre aberto a novas oportunidades e colaborações interessantes. Se você tem um
+							projeto em mente ou simplesmente quer bater um papo sobre tecnologia, ficarei feliz em
+							conversar!
+						</p>
+						<div class="flex flex-wrap gap-4 pt-4">
+							<a
+								href="mailto:seu-email@exemplo.com"
+								class="text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+							>
+								Email
+							</a>
+							<a
+								href="#"
+								class="text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+							>
+								LinkedIn
+							</a>
+							<a
+								href="#"
+								class="text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+							>
+								GitHub
+							</a>
+						</div>
+					</div>
 				</section>
 			</div>
 		</main>
 
-		<footer>
-			<Footer />
+		<!-- Simple Footer -->
+		<footer class="container mx-auto max-w-3xl px-4 py-8 text-center text-sm text-zinc-400">
+			<p>© 2025 Mouro. Feito com ❤️ usando Astro.</p>
 		</footer>
 	</div>
 </Layout>

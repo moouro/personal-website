@@ -2,105 +2,38 @@
 import { Image } from 'astro:assets'
 import Profile from '@/assets/profile.png'
 import { Icon } from 'astro-icon/components'
+import Menu from '@/components/Menu.astro'
 ---
 
 <nav class="container mx-auto mt-10 max-w-3xl px-4">
-	<div class="space-y-6">
-		<Image
-			src={Profile}
-			width="150"
-			alt="Foto de perfil de Mouro, desenvolvedor front-end especializado em JavaScript e TypeScript"
-			class="w-36 rounded-full md:w-40"
-			format="avif"
-			loading={'eager'}
-		/>
-		<h1 class="text-heading text-xl font-bold md:text-3xl">
-			Olá, sou o <span class="text-accent">Mouro</span>
-		</h1>
-		<p class="text-lg leading-relaxed">
-			Sou um desenvolvedor front-end do Rio de Janeiro, focado em criar interfaces modernas e
-			responsivas. Minhas principais tecnologias incluem:
-		</p>
-		<div class="flex flex-wrap gap-2">
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>JavaScript</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>TypeScript</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>React</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>Astro</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>Tailwind CSS</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>Sass</span
-			>
-			<span class="text-accent bg-accent/20 inline-block rounded px-3 py-1 text-sm font-semibold"
-				>Vite.js</span
-			>
-		</div>
-		<p class="text-lg leading-relaxed">
-			Estou sempre aprendendo e aplicando as melhores práticas em desenvolvimento web. Tenho
-			experiência prática com projetos pessoais e participação em eventos de desenvolvimento.
-		</p>
-		<p class="text-accent text-lg leading-relaxed font-semibold">
-			Vamos criar algo incrível juntos?
-		</p>
-		<div class="flex items-center gap-4">
-			<a
-				href="/about"
-				class="bg-accent hover:bg-accent/60 focus:ring-accent/40 focus:ring-opacity-75 flex w-fit items-center gap-2 rounded px-4 py-2 font-bold text-white shadow transition-colors duration-300 ease-in-out focus:ring-2 focus:outline-none"
-				aria-label="Sobre mim"
-			>
-				Sobre mim
-				<Icon name="about" size={20} />
-			</a>
-			<div class="flex gap-2">
-				<a
-					href="https://wa.me/5521992802319"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Entre em contato via WhatsApp"
-				>
-					<Icon name="whatsapp" size={25} />
-					<span class="sr-only">Entre em contato via WhatsApp</span>
-				</a>
+	<Menu />
+</nav>
 
-				<a
-					href="https://github.com/moouro"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Meu perfil no GitHub"
-				>
-					<Icon name="github" size={25} />
-					<span class="sr-only"> Meu perfil no GitHub </span>
-				</a>
+<!-- Hero Section -->
+<main class="container mx-auto max-w-3xl px-4">
+	<section class="py-16 md:py-24">
+		<div class="space-y-8">
+			<!-- Main Heading -->
+			<h1 class="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">Olá, sou o Mouro.</h1>
 
-				<a
-					href="https://x.com/moouro"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Meu perfil no X"
-				>
-					<Icon name="twitter" size={25} />
-					<span class="sr-only"> Meu perfil no X </span>
-				</a>
-
-				<a
-					href="https://www.instagram.com/moouro"
-					target="_blank"
-					rel="noopener noreferrer"
-					aria-label="Meu perfil no Instagram"
-				>
-					<Icon name="instagram" size={25} />
-					<span class="sr-only"> Meu perfil no Instagram</span>
-				</a>
+			<!-- Description -->
+			<div class="space-y-6 text-lg leading-relaxed text-zinc-300 md:text-xl">
+				<p>
+					Sou um desenvolvedor front-end apaixonado por criar experiências digitais incríveis,
+					morando no Rio de Janeiro. Este é meu espaço pessoal na Internet onde compartilho meus
+					projetos e ideias.
+				</p>
+				<p>
+					Sempre buscando aprimorar minhas habilidades e explorar novas tecnologias para desenvolver
+					soluções criativas e funcionais. Confira minha página
+					<a
+						href="/about"
+						class="text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+						>sobre</a
+					>
+					para saber mais sobre mim.
+				</p>
 			</div>
 		</div>
-	</div>
-</nav>
+	</section>
+</main>

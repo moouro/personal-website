@@ -2,67 +2,100 @@
 import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
 import Project from '@/components/Project.astro'
-import Footer from '@/components/Footer.astro'
 import { ClientRouter } from 'astro:transitions'
-import Title from '@/components/Title.astro'
 import projectData from '@/data/projects.json'
-import Skills from '@/components/Skills.astro'
-
-// Verificar se os dados foram carregados corretamente
-console.log('Dados do JSON:', projectData)
+import { Icon } from 'astro-icon/components'
 
 // Ordenar projetos por data (mais recentes primeiro)
 const sortedProjects = [...projectData].sort(
 	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 )
-console.log('Projetos ordenados:', sortedProjects)
 
 const latestProjects = sortedProjects.slice(0, 4)
-console.log('Últimos 4 projetos:', latestProjects)
 ---
 
 <Layout title="mouro.dev">
 	<ClientRouter />
-	<div class="grid h-svh grid-rows-[auto_1fr_auto] gap-6">
-		<header>
-			<Hero />
-		</header>
-		<main>
-			<section class="mt-14">
-				<div class="container mx-auto max-w-3xl px-4">
-					<div class="space-y-4">
-						<Title title="Projetos" />
-						<div class="grid gap-4 md:grid-cols-2">
-							{
-								latestProjects.map((project) => (
-									<Project
-										name={project.name}
-										description={project.description}
-										url={project.url}
-										stack={project.stack}
-										date={project.date}
-										work={project.work}
-									/>
-								))
-							}
-						</div>
-						<!-- <a
-							class="bg-surface text-heading hover:bg-surface/70 active:bg-surface/80 flex w-fit items-center gap-4 rounded-md px-5 py-2 font-bold transition-all duration-150 hover:shadow-lg active:shadow-lg"
-							href="/projects"
-						>
-							Mais projetos
-							<Icon name="code" size={15} />
-						</a> -->
-					</div>
+	<div class="min-h-screen bg-zinc-900">
+		<!-- Hero Section -->
+		<Hero />
+
+		<!-- Main Content -->
+		<div class="container mx-auto max-w-3xl px-4 pb-16">
+			<!-- Meus Projetos Section -->
+			<section class="mb-16">
+				<h2 class="mb-8 text-2xl font-semibold md:text-3xl">Meus Projetos</h2>
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						latestProjects.map((project) => (
+							<Project
+								name={project.name}
+								description={project.description}
+								url={project.url}
+								stack={project.stack}
+								work={project.work}
+								date={project.date}
+							/>
+						))
+					}
+				</div>
+
+				<div class="mt-8 text-center">
+					<a
+						href="/projects"
+						class="inline-flex items-center gap-2 font-medium text-teal-400 underline decoration-1 underline-offset-2 hover:text-teal-300"
+					>
+						Ver todos os projetos
+						<Icon name="arrow" size={16} class="transition-transform group-hover:translate-x-1" />
+					</a>
 				</div>
 			</section>
 
-			<section class="mt-14">
-				<Skills />
+			<!-- Redes Sociais Section -->
+			<section class="mb-16">
+				<h2 class="mb-8 text-2xl font-semibold md:text-3xl">Vamos nos conectar</h2>
+				<div class="flex flex-wrap gap-6">
+					<a
+						href="https://github.com/seu-usuario"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-3 text-zinc-300 transition-colors hover:text-teal-400"
+					>
+						<Icon name="github" size={24} />
+						<span>GitHub</span>
+					</a>
+					<a
+						href="https://linkedin.com/in/seu-perfil"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-3 text-zinc-300 transition-colors hover:text-teal-400"
+					>
+						<Icon name="linkedin" size={24} />
+						<span>LinkedIn</span>
+					</a>
+					<a
+						href="https://instagram.com/seu-perfil"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex items-center gap-3 text-zinc-300 transition-colors hover:text-teal-400"
+					>
+						<Icon name="instagram" size={24} />
+						<span>Instagram</span>
+					</a>
+					<a
+						href="mailto:seu-email@gmail.com"
+						class="flex items-center gap-3 text-zinc-300 transition-colors hover:text-teal-400"
+					>
+						<Icon name="mail" size={24} />
+						<span>Email</span>
+					</a>
+				</div>
 			</section>
-		</main>
-		<footer>
-			<Footer />
+		</div>
+
+		<!-- Footer -->
+		<footer class="container mx-auto max-w-3xl px-4 py-8 text-center text-sm text-zinc-400">
+			<p>© 2025 Mouro. Desenvolvido com ❤️ no Rio de Janeiro usando Astro.</p>
 		</footer>
 	</div>
 </Layout>

@@ -1,0 +1,185 @@
+---
+import Link from './Link.astro'
+
+interface NavigationItem {
+	href: string
+	label: string
+}
+
+const navigationItems: NavigationItem[] = [
+	{ href: '/', label: 'Home' },
+	{ href: '/projects', label: 'Projetos' },
+	{ href: '/about', label: 'Sobre' }
+]
+---
+
+<div class="w-full md:flex md:items-center md:justify-between">
+	<div class="flex justify-end p-4 md:hidden">
+		<button
+			id="menu-btn"
+			aria-label="Abrir menu"
+			aria-expanded="false"
+			aria-controls="menu"
+			class="cursor-pointer rounded-md focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:outline-none"
+		>
+			<svg
+				class="pointer-events-none h-6 w-6 transition-transform duration-200 hover:scale-110"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16m-7 6h7"></path>
+			</svg>
+
+			<svg
+				class="pointer-events-none hidden h-6 w-6 transition-transform duration-200 hover:scale-110"
+				fill="none"
+				stroke="currentColor"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+	</div>
+
+	<ul
+		id="menu"
+		class="mobile-menu hidden w-full flex-col rounded-3xl bg-zinc-800 p-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4"
+		aria-labelledby="menu-btn"
+	>
+		{
+			navigationItems.map((item: NavigationItem) => (
+				<li>
+					<Link href={item.href} class="block py-2 text-sm hover:text-teal-500 md:py-0">
+						{item.label}
+					</Link>
+				</li>
+			))
+		}
+	</ul>
+</div>
+
+<script>
+	// Aguardar o DOM estar pronto
+	function initMenu() {
+		const menuBtn = document.getElementById('menu-btn')
+		const menu = document.getElementById('menu')
+
+		// Verificar se elementos existem
+		if (!menuBtn || !menu) {
+			console.warn('Menu elements not found')
+			return
+		}
+
+		const hamburgerIcon = menuBtn.querySelector('svg:first-child')
+		const closeIcon = menuBtn.querySelector('svg:last-child')
+
+		// State management
+		let isOpen = false
+
+		function updateUI() {
+			// Double check elementos ainda existem
+			if (!menuBtn || !menu) return
+
+			if (isOpen) {
+				menu.classList.remove('hidden')
+				menu.classList.add('flex')
+				hamburgerIcon?.classList.add('hidden')
+				closeIcon?.classList.remove('hidden')
+				menuBtn.setAttribute('aria-expanded', 'true')
+			} else {
+				menu.classList.add('hidden')
+				menu.classList.remove('flex')
+				hamburgerIcon?.classList.remove('hidden')
+				closeIcon?.classList.add('hidden')
+				menuBtn.setAttribute('aria-expanded', 'false')
+			}
+		}
+
+		function toggleMenu() {
+			isOpen = !isOpen
+			updateUI()
+		}
+
+		function closeMenu() {
+			isOpen = false
+			updateUI()
+		}
+
+		// Event listeners
+		menuBtn.addEventListener('click', (e) => {
+			e.stopPropagation()
+			toggleMenu()
+		})
+
+		// Close on outside click (mobile only)
+		document.addEventListener('click', (e) => {
+			if (!menuBtn || !menu) return
+
+			const target = e.target as Node
+			if (
+				window.innerWidth < 768 &&
+				isOpen &&
+				!menu.contains(target) &&
+				!menuBtn.contains(target)
+			) {
+				closeMenu()
+			}
+		})
+
+		// Close on escape
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && isOpen) {
+				closeMenu()
+			}
+		})
+
+		// Handle resize
+		window.addEventListener('resize', () => {
+			if (!menu) return
+
+			if (window.innerWidth >= 768) {
+				// Desktop - always show
+				menu.classList.remove('hidden')
+				menu.classList.add('flex')
+			} else {
+				// Mobile - close if open
+				if (isOpen) {
+					closeMenu()
+				} else {
+					updateUI()
+				}
+			}
+		})
+
+		// Initial state
+		if (window.innerWidth >= 768) {
+			menu.classList.remove('hidden')
+			menu.classList.add('flex')
+		} else {
+			updateUI()
+		}
+
+		console.log('Menu mobile inicializado')
+	}
+
+	// Initialize on DOM ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initMenu)
+	} else {
+		initMenu()
+	}
+
+	// Reinitialize on Astro page loads
+	document.addEventListener('astro:page-load', initMenu)
+</script>

@@ -1,15 +1,40 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@theme {
-	--color-black-500: #1d1e24;
-	--color-bodyLight: #b5b7bf;
-	--color-heading: #fcfcfc;    
-  --color-bodyDark: #93959c;
-  --color-overlay: #30323b;
-  --color-border: #33363d;
-  --color-surface: #23262b;
-   --color-accent: #0090FF;
+@layer base {
+	/* Seleção de texto personalizada */
+	::selection {
+		background-color: rgba(20, 184, 166, 0.2);
+		color: rgb(20, 184, 166);
+	}
 }
 
+@layer components {
+	/* Utility class para truncar texto em 3 linhas */
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
 
+	/* Animação específica para o menu mobile */
+	.mobile-menu {
+		transition: all 0.3s ease-in-out;
+		transform-origin: top;
+	}
 
+	.mobile-menu.hidden {
+		opacity: 0;
+		transform: scaleY(0);
+		max-height: 0;
+		pointer-events: none;
+	}
+
+	.mobile-menu:not(.hidden) {
+		opacity: 1;
+		transform: scaleY(1);
+		max-height: 500px;
+		pointer-events: auto;
+	}
+}
